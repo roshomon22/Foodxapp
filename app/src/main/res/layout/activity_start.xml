@@ -20,7 +20,7 @@
         app:srcCompat="@drawable/istockphoto_1215824203_612x612" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/skipBtn"
         android:layout_width="47dp"
         android:layout_height="22dp"
         android:background="@drawable/skip"
@@ -71,11 +71,12 @@
         app:srcCompat="@drawable/pager_dots" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/startActivityBtn"
         android:layout_width="72dp"
         android:layout_height="70dp"
         android:background="@drawable/group_3"
         android:foreground="@drawable/group_3"
+        android:onClick="nextActivity"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
