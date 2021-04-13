@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E4E4E4"
-    tools:context=".ViewActivity">
+    tools:context=".PendingActivity">
 
     <Button
-        android:id="@+id/backBtn3"
+        android:id="@+id/backBtn4"
         android:layout_width="32dp"
         android:layout_height="30dp"
         android:background="@drawable/abc_vector_test"
@@ -21,64 +20,51 @@
         app:layout_constraintVertical_bias="0.077" />
 
     <ImageView
-        android:id="@+id/imageView36"
-        android:layout_width="412dp"
-        android:layout_height="362dp"
+        android:id="@+id/imageView40"
+        android:layout_width="411dp"
+        android:layout_height="360dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ewrerer" />
+        app:srcCompat="@drawable/pend" />
 
     <ImageView
-        android:id="@+id/imageView37"
-        android:layout_width="94dp"
-        android:layout_height="57dp"
+        android:id="@+id/imageView41"
+        android:layout_width="158dp"
+        android:layout_height="63dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.156"
-        app:srcCompat="@drawable/uipo" />
-
-    <ImageView
-        android:id="@+id/imageView38"
-        android:layout_width="416dp"
-        android:layout_height="108dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52"
-        app:srcCompat="@drawable/tytyu" />
-
-    <ImageView
-        android:id="@+id/imageView39"
-        android:layout_width="141dp"
-        android:layout_height="46dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.67"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.953"
-        app:srcCompat="@drawable/place" />
+        app:layout_constraintVertical_bias="0.188"
+        app:srcCompat="@drawable/pen" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="63dp"
-        android:layout_height="43dp"
-        android:background="@drawable/eet"
-        android:foreground="@drawable/eet"
+        android:id="@+id/button4"
+        android:layout_width="57dp"
+        android:layout_height="21dp"
+        android:background="@drawable/clear"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintHorizontal_bias="0.954"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.949" />
+        app:layout_constraintVertical_bias="0.088" />
+
+    <ImageView
+        android:id="@+id/imageView42"
+        android:layout_width="419dp"
+        android:layout_height="504dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/pe" />
 </androidx.constraintlayout.widget.ConstraintLayout>

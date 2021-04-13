@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Foodx">
-        <activity android:name=".ViewActivity"></activity>
+        <activity android:name=".PendingActivity"></activity>
+        <activity android:name=".ViewActivity" />
         <activity android:name=".MainMenuActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
