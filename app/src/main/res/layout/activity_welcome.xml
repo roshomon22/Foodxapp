@@ -56,7 +56,7 @@
         app:srcCompat="@drawable/start_sharing__food__" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/activity_welcome_login_btn"
         android:layout_width="271dp"
         android:layout_height="64dp"
         android:background="@drawable/group_6"
@@ -69,7 +69,7 @@
         app:layout_constraintVertical_bias="0.729" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/activity_welcome_register_btn"
         android:layout_width="271dp"
         android:layout_height="64dp"
         android:background="@drawable/group_6"

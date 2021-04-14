@@ -8,7 +8,7 @@
     tools:context=".RegisterActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/reg_btn"
         android:layout_width="217dp"
         android:layout_height="56dp"
         android:background="@drawable/qw"
@@ -83,12 +83,14 @@
         app:srcCompat="@drawable/we" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/reg_name"
         android:layout_width="305dp"
         android:layout_height="44dp"
         android:ems="10"
         android:hint="Name"
         android:inputType="textPersonName"
+        android:textColor="#070707"
+        android:textColorHint="#0E0E0E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,10 +98,12 @@
         app:layout_constraintVertical_bias="0.601" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/reg_email"
         android:layout_width="303dp"
         android:layout_height="44dp"
         android:ems="10"
+        android:textColor="#070707"
+        android:textColorHint="#0E0E0E"
         android:hint="Email"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -110,10 +114,12 @@
         app:layout_constraintVertical_bias="0.665" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/reg_pass"
         android:layout_width="306dp"
         android:layout_height="47dp"
         android:ems="10"
+        android:textColor="#070707"
+        android:textColorHint="#0E0E0E"
         android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -124,10 +130,12 @@
         app:layout_constraintVertical_bias="0.732" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/reg_phone"
         android:layout_width="308dp"
         android:layout_height="44dp"
         android:ems="10"
+        android:textColor="#070707"
+        android:textColorHint="#0E0E0E"
         android:hint="Phone Number"
         android:inputType="phone"
         app:layout_constraintBottom_toBottomOf="parent"
