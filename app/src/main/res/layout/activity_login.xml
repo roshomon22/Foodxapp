@@ -9,17 +9,18 @@
 
     <Button
         android:id="@+id/signUp_btn"
-        android:layout_width="72dp"
-        android:layout_height="70dp"
+        android:layout_width="57dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="3dp"
         android:background="@drawable/group_3"
         android:foreground="@drawable/group_3"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.962" />
+        app:layout_constraintVertical_bias="0.954" />
 
     <Button
         android:id="@+id/login_btn"

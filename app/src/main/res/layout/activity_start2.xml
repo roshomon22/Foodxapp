@@ -79,10 +79,9 @@
         android:layout_height="235dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.897"
+        app:layout_constraintVertical_bias="0.891"
         app:srcCompat="@drawable/you_can_request_for_a_specific_food_item_shared_by_other_people_in_your_neighbourhood__you_can_then_directly_contact_the_person_to_get_the_food_item_from_their_location" />
 
     <Button

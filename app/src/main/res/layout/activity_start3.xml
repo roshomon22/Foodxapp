@@ -74,13 +74,14 @@
 
     <ImageView
         android:id="@+id/imageView16"
-        android:layout_width="355dp"
-        android:layout_height="270dp"
+        android:layout_width="342dp"
+        android:layout_height="253dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.832"
+        app:layout_constraintVertical_bias="0.817"
         app:srcCompat="@drawable/share_food_and_interact_with_others_to_build_up_strong_food_sharing_communities_and_help_us_in_reducing_food_wastage_problems____join_the_community" />
 
     <ImageView
@@ -92,6 +93,6 @@
         app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.56"
+        app:layout_constraintVertical_bias="0.549"
         app:srcCompat="@drawable/build_up_food_sharing_communities_" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,15 +36,15 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="282dp"
-        android:layout_height="85dp"
-        android:layout_marginEnd="30dp"
+        android:layout_width="298dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.179"
+        app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.562"
+        app:layout_constraintVertical_bias="0.561"
         app:srcCompat="@drawable/scroll_group_2" />
 
     <ImageView
@@ -53,10 +53,10 @@
         android:layout_height="261dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.394"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.77"
+        app:layout_constraintVertical_bias="0.772"
         app:srcCompat="@drawable/sharing_food_feels_amazing__it_only_takes_a_few_minutes___share_the_extra_food_item_that_you_have_to_reduce_food_wastage_and_make_food_available_to_the_needy_as_well_____" />
 
     <ImageView
