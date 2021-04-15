@@ -36,15 +36,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="298dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="2dp"
+        android:layout_width="283dp"
+        android:layout_height="66dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintHorizontal_bias="0.145"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561"
+        app:layout_constraintVertical_bias="0.569"
         app:srcCompat="@drawable/scroll_group_2" />
 
     <ImageView
