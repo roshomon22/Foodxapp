@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Foodx">
-        <activity android:name=".ShareActivity"></activity>
+        <activity android:name=".ShareFoodActivity"></activity>
+        <activity android:name=".ShareActivity" />
         <activity android:name=".PendingActivity" />
         <activity android:name=".ViewActivity" />
         <activity android:name=".MainMenuActivity" />
