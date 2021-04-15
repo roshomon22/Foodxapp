@@ -51,11 +51,12 @@
         android:id="@+id/imageView4"
         android:layout_width="347dp"
         android:layout_height="274dp"
+        android:layout_marginEnd="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.789"
+        app:layout_constraintVertical_bias="0.774"
         app:srcCompat="@drawable/sharing_food_feels_amazing__it_only_takes_a_few_minutes___share_the_extra_food_item_that_you_have_to_reduce_food_wastage_and_make_food_available_to_the_needy_as_well_____" />
 
     <ImageView

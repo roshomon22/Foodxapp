@@ -79,29 +79,29 @@
         android:layout_height="44dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.563"
+        app:layout_constraintVertical_bias="0.558"
         app:srcCompat="@drawable/scroll_group_12" />
 
     <ImageView
         android:id="@+id/imageView25"
         android:layout_width="287dp"
         android:layout_height="63dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.29"
+        app:layout_constraintHorizontal_bias="0.217"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.962"
+        app:layout_constraintVertical_bias="0.96"
         app:srcCompat="@drawable/don_t_have_an_account_______________________sign_up" />
 
     <EditText
         android:id="@+id/login_email_text"
-        android:layout_width="310dp"
-        android:layout_height="41dp"
+        android:layout_width="311dp"
+        android:layout_height="53dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
@@ -126,8 +126,8 @@
         android:textColorHint="#0E0E0E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.709" />
+        app:layout_constraintVertical_bias="0.721" />
 </androidx.constraintlayout.widget.ConstraintLayout>
