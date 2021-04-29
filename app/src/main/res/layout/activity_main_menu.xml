@@ -18,7 +18,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/uiui" />
+        app:srcCompat="@drawable/uiui"
+        android:contentDescription="TODO" />
 
     <ImageView
         android:id="@+id/imageView31"
@@ -122,7 +123,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.377"
-        app:srcCompat="@drawable/path_70" />
+        app:srcCompat="@drawable/path_70"
+        android:contentDescription="TODO" />
 
     <ImageView
         android:id="@+id/imageView46"
@@ -137,7 +139,7 @@
         app:srcCompat="@drawable/line_19" />
 
     <ImageView
-        android:id="@+id/imageView47"
+        android:id="@+id/MyRequests"
         android:layout_width="46dp"
         android:layout_height="47dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -146,27 +148,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/bag" />
+        app:srcCompat="@drawable/bag"
+        android:contentDescription="TODO" />
 
     <ImageView
-        android:id="@+id/imageView49"
+        android:id="@+id/UserProfile"
         android:layout_width="41dp"
         android:layout_height="45dp"
+        android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.813"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/profile" />
+        app:srcCompat="@drawable/profile"
+        android:contentDescription="TODO" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/ShrFoodBtn"
         android:layout_width="149dp"
         android:layout_height="52dp"
         android:background="@drawable/scroll_group_21"
         android:foreground="@drawable/scroll_group_21"
-        android:text="Button"
+        android:text="@string/button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.061"
@@ -175,7 +180,7 @@
         app:layout_constraintVertical_bias="0.365" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/PendRqstBtn"
         android:layout_width="167dp"
         android:layout_height="53dp"
         android:layout_marginTop="3dp"

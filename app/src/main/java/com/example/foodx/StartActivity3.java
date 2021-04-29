@@ -1,6 +1,7 @@
 package com.example.foodx;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ public class StartActivity3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start3);
+
 
         Button button = (Button) findViewById(R.id.startActivity3Btn);
         button.setOnClickListener(new View.OnClickListener() {

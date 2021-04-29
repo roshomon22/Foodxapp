@@ -88,15 +88,15 @@
 
     <ImageView
         android:id="@+id/imageView25"
-        android:layout_width="287dp"
-        android:layout_height="63dp"
+        android:layout_width="273dp"
+        android:layout_height="61dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintEnd_toStartOf="@+id/signUp_btn"
+        app:layout_constraintHorizontal_bias="0.64"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.96"
+        app:layout_constraintVertical_bias="0.957"
         app:srcCompat="@drawable/don_t_have_an_account_______________________sign_up" />
 
     <EditText

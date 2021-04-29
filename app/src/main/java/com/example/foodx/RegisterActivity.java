@@ -25,6 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText registerPassText;
 
     private Button registerBtn;
+    private Button Backtostrt;
     private FirebaseAuth mAuth;
 
     @Override
@@ -85,7 +86,13 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-
+        Backtostrt=(Button) findViewById(R.id.backBtn);
+        Backtostrt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendToStart();
+            }
+        });
 
 
     }
@@ -105,5 +112,11 @@ public class RegisterActivity extends AppCompatActivity {
         startActivity(mainMenuIntent);
         finish();
     }
+    private void sendToStart() {
+        Intent welcomeIntent = new Intent(RegisterActivity.this,WelcomeActivity.class);
+        startActivity(welcomeIntent);
+        finish();
+    }
+
 }
 
