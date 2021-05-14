@@ -35,7 +35,7 @@ public class ShareFoodActivity extends AppCompatActivity {
                 DatePickerDialog dialog = new DatePickerDialog(
                         ShareFoodActivity.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                        mDateSetListener,
+                        null,
                         year,month,day);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
@@ -48,8 +48,8 @@ public class ShareFoodActivity extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int day) {
                 month=month+1;
-                Log.d(TAG,"onDateSet: mm/dd/yy"+month+"/"+day+"/"+year);
-                String date=month + "/" +day+ "/"+year;
+                Log.d(TAG,"onDateSet: mm/dd/yy"+ month+ "/" + day + "/" + year);
+                String date=month + "/" + day + "/" + year;
                 mDisplayDate.setText(date);
             }
         };

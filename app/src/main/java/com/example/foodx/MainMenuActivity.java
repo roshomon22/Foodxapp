@@ -31,5 +31,14 @@ public class MainMenuActivity extends AppCompatActivity {
                 finish();
             }
         });
+        Button skipButton2 = (Button) findViewById(R.id.button7);
+        skipButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainMenuActivity.this, ShareFoodActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }
