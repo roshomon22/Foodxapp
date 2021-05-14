@@ -15,7 +15,8 @@ import java.util.Calendar;
 
 public class ShareFoodActivity extends AppCompatActivity {
     private static final String TAG ="ShareFoodActivity";
-    private DatePickerDialog.OnDateSetListener mDataSetListener;
+    private TextView mDisplayDate;
+    private DatePickerDialog.OnDateSetListener mDateSetListener;
 
 
 
@@ -31,11 +32,11 @@ public class ShareFoodActivity extends AppCompatActivity {
                 int year = cal.get(Calendar.YEAR);
                 int month = cal.get(Calendar.MONTH);
                 int day = cal.get(Calendar.DAY_OF_MONTH);
-                DatePickerDialog.OnDateSetListener mDateSetListener = null;
+
                 DatePickerDialog dialog = new DatePickerDialog(
                         ShareFoodActivity.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                        null,
+                        mDateSetListener,
                         year,month,day);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
@@ -43,7 +44,7 @@ public class ShareFoodActivity extends AppCompatActivity {
 
             }
         });
-        DatePickerDialog.OnDateSetListener mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
 
             @Override
             public void onDateSet(DatePicker view, int year, int month, int day) {
