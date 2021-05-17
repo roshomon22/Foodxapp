@@ -3,11 +3,13 @@ package com.example.foodx;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
@@ -17,6 +19,7 @@ public class ShareFoodActivity extends AppCompatActivity {
     private static final String TAG ="ShareFoodActivity";
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
+    private Button BackButton;
 
 
 
@@ -54,6 +57,17 @@ public class ShareFoodActivity extends AppCompatActivity {
                 mDisplayDate.setText(date);
             }
         };
+
+        BackButton = (Button) findViewById(R.id.backBtn6);
+        BackButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ShareFoodActivity.this, MainMenuActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
 }
