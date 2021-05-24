@@ -24,8 +24,9 @@ public class MainMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         mAuth = FirebaseAuth.getInstance();
-        LogoutBtn = (Button) findViewById(R.id.logout_button);
 
+
+        LogoutBtn = (Button) findViewById(R.id.logout_button);
         LogoutBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -58,6 +59,8 @@ public class MainMenuActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+
         UserSharedItems= (ImageView) findViewById(R.id.UserProfile);
         UserSharedItems.setOnClickListener(new View.OnClickListener() {
             @Override
