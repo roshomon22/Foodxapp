@@ -8,7 +8,7 @@ class Post {
     public Post() {
 
     }
-    public Post(String itemName, String UserID, String contactNumber, String Location, String expiryDate)
+    public Post(String itemName, String UserID, String contactNumber, String location, String expiryDate)
     {
 
         this.contactNumber = contactNumber;
