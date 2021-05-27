@@ -28,7 +28,9 @@ public class MainMenuActivity extends AppCompatActivity {
     private MyAdapter adapter;
     private ArrayList<Post> list;
     private FirebaseDatabase mDatabase= FirebaseDatabase.getInstance();
-    private DatabaseReference root = mDatabase.getReference().child("Posts");
+    private DatabaseReference RootRef = mDatabase.getInstance().getReference();
+    private DatabaseReference usersRef=RootRef.child("Users");
+    private DatabaseReference postsRef=RootRef.child("Posts");
     private Button LogoutBtn;
     private Button PendingRqstBtn;
     private Button ShareFoodBtn;
@@ -100,16 +102,20 @@ public class MainMenuActivity extends AppCompatActivity {
         });
 
 
-        root.addValueEventListener(new ValueEventListener() {
+        postsRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
+
                     Post post = ds.getValue(Post.class);
                     list.add(post);
+
 
                 }
                 adapter.notifyDataSetChanged();
             }
+
+
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
