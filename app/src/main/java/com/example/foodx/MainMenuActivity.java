@@ -27,9 +27,8 @@ import java.util.ArrayList;
 public class MainMenuActivity extends AppCompatActivity {
     private RecyclerView recView;
     private MyAdapter adapter;
-    private MyAdapter1 adapter1;
     private ArrayList<Post> list;
-    private ArrayList<User> list1;
+
 
 
     private FirebaseDatabase mDatabase= FirebaseDatabase.getInstance();
@@ -53,16 +52,17 @@ public class MainMenuActivity extends AppCompatActivity {
         recView.setHasFixedSize(true);
         recView.setLayoutManager(new LinearLayoutManager(this));
         list =new ArrayList<Post>();
-        list1=new ArrayList<User>();
+
         adapter = new MyAdapter(this,list);
-        adapter1 = new MyAdapter1(this,list1);
+
 
 
         recView.setAdapter(adapter);
-        recView.setAdapter(adapter1);
+
 
 
         mAuth = FirebaseAuth.getInstance();
+
 
 
         LogoutBtn = (Button) findViewById(R.id.logout_button);
@@ -132,26 +132,7 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
-        usersRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
-                    User user = ds.getValue(User.class);
-                    list1.add(user);
-
-                }
-
-                adapter1.notifyDataSetChanged();
-            }
-
-
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                System.out.println("The read failed: " + databaseError.getCode());
-            }
-        });
 
     }
 }

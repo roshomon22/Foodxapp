@@ -35,7 +35,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Post post=pList.get(position);
-
+        holder.UserID.setText(post.getUserID());
         holder.itemName.setText(post.getItemName());
 
     }
@@ -52,7 +52,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-
+            UserID = itemView.findViewById(R.id.userid);
             itemName =itemView.findViewById(R.id.food_1);
 
         }
