@@ -41,6 +41,7 @@ public class MainMenuActivity extends AppCompatActivity {
     private ImageView UserSharedItems;
 
     private FirebaseAuth mAuth;
+   
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,12 +113,14 @@ public class MainMenuActivity extends AppCompatActivity {
 
 
         postsRef.addValueEventListener(new ValueEventListener() {
+
+
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
-
                     Post post = ds.getValue(Post.class);
-                    list.add(post);
+                        list.add(post);
+
 
                 }
 
