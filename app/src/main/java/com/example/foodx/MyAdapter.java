@@ -12,11 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
-    ArrayList<Post> mList;
+    ArrayList<Post> pList;
     Context context;
 
-    public MyAdapter(Context context, ArrayList<Post>mList){
-        this.mList=mList;
+    public MyAdapter(Context context, ArrayList<Post>pList){
+        this.pList=pList;
         this.context=context;
 
     }
@@ -32,7 +32,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Post post=mList.get(position);
+        Post post=pList.get(position);
         holder.UserID.setText(post.getUserID());
         holder.itemName.setText(post.getItemName());
 
@@ -40,7 +40,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
     @Override
     public int getItemCount() {
-        return mList.size();
+        return pList.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
