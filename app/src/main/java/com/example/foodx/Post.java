@@ -3,7 +3,7 @@ package com.example.foodx;
 
 public class Post {
 
-    public String itemName, UserID, contactNumber,Location, expiryDate;
+    private String itemName, UserID, contactNumber,Location, expiryDate;
 
     public Post() {
 
@@ -24,7 +24,6 @@ public class Post {
     public String getUserID() {
         return UserID;
     }
-
     public String getContactNumber() {
         return contactNumber;
     }
@@ -36,6 +35,5 @@ public class Post {
     public String getExpiryDate() {
         return expiryDate;
     }
-
 
 }
