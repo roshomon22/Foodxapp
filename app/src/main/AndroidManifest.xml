@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.foodx">
-<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"
@@ -10,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Foodx">
-        <activity android:name=".ShareFoodActivity"></activity>
+        <activity android:name=".MainViewFood"></activity>
+        <activity android:name=".ShareFoodActivity" />
         <activity android:name=".ShareActivity" />
         <activity android:name=".PendingActivity" />
         <activity android:name=".ViewActivity" />
