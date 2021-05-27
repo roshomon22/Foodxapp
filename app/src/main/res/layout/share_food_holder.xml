@@ -7,29 +7,31 @@
     android:elevation="5dp"
     app:cardUseCompatPadding="true">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#FCFCFC"
         android:padding="15dp">
 
 
         <TextView
+            android:id="@+id/userid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/nametext"
+            android:layout_marginLeft="10dp"
             android:text="Name of the user"
-            android:textStyle="normal"
-            android:textSize="20sp"
             android:textColor="#000"
-            android:layout_marginLeft="10dp"/>
+            android:textSize="20sp"
+            android:textStyle="normal" />
 
         <TextView
-            android:id="@+id/coursetext"
+            android:id="@+id/food_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/nametext"
+            android:layout_below="@id/userid"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="3dp"
             android:text=" Food Item Name"
             android:textColor="#000"
             android:textSize="16sp" />

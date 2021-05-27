@@ -1,5 +1,7 @@
 package com.example.foodx;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,13 +13,20 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class MainMenuActivity extends AppCompatActivity {
-    RecyclerView recview;
+    private RecyclerView recView;
+    private MyAdapter adapter;
+    private ArrayList<Post> list;
+    private DatabaseReference mDatabase;
     private Button LogoutBtn;
     private Button PendingRqstBtn;
     private Button ShareFoodBtn;
@@ -29,8 +38,15 @@ public class MainMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-        recview =(RecyclerView)findViewById(R.id.recview);
-        recview.setLayoutManager(new LinearLayoutManager(this));
+        mDatabase.keepSynced(true);
+
+        recView = (RecyclerView) findViewById(R.id.recview);
+        recView.setHasFixedSize(true);
+        recView.setLayoutManager(new LinearLayoutManager(this));
+        list =new ArrayList<>();
+        adapter = new MyAdapter(this,list);
+
+        recView.setAdapter(adapter);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -71,7 +87,7 @@ public class MainMenuActivity extends AppCompatActivity {
         });
 
 
-        UserSharedItems= (ImageView) findViewById(R.id.UserProfile);
+        UserSharedItems = (ImageView) findViewById(R.id.UserProfile);
         UserSharedItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,14 +98,16 @@ public class MainMenuActivity extends AppCompatActivity {
         });
 
 
-
         FirebaseDatabase.getInstance().getReference("Posts").child("posts").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for(DataSnapshot ds : dataSnapshot.getChildren()) {
-                        Post post = ds.getValue(Post.class);
-                        System.out.println(post.contactNumber + " " +post.Location + " "+ post.itemName + " " + post.expiryDate + " " + post.UserID);
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    Post post = ds.getValue(Post.class);
+                    Post model = null;
+                    list.add(model);
+
                 }
+                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -99,3 +117,6 @@ public class MainMenuActivity extends AppCompatActivity {
         });
     }
 }
+
+
+
