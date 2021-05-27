@@ -1,7 +1,7 @@
 
 package com.example.foodx;
 
-class Post {
+public class Post {
 
     public String itemName, UserID, contactNumber,Location, expiryDate;
 
@@ -21,39 +21,21 @@ class Post {
         return itemName;
     }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
-
     public String getUserID() {
         return UserID;
-    }
-
-    public void setUserID(String userID) {
-        UserID = userID;
     }
 
     public String getContactNumber() {
         return contactNumber;
     }
 
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
-    }
-
     public String getLocation() {
         return Location;
-    }
-
-    public void setLocation(String location) {
-        Location = location;
     }
 
     public String getExpiryDate() {
         return expiryDate;
     }
 
-    public void setExpiryDate(String expiryDate) {
-        this.expiryDate = expiryDate;
-    }
+
 }
