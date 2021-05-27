@@ -9,8 +9,8 @@
     app:cardUseCompatPadding="true">
 
     <RelativeLayout
-        android:layout_width="393dp"
-        android:layout_height="80dp"
+        android:layout_width="390dp"
+        android:layout_height="83dp"
         android:background="#F3F3F3"
         android:padding="15dp">
 
@@ -40,6 +40,16 @@
             android:text=" Eggs"
             android:textColor="#000"
             android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/view123"
+            android:layout_width="65dp"
+            android:layout_height="50dp"
+            android:layout_alignLeft="@id/userid"
+            android:layout_marginLeft="241dp"
+            android:background="@drawable/viewpood"
+            android:foreground="@drawable/viewpood"
+            android:text="" />
 
 
     </RelativeLayout>
