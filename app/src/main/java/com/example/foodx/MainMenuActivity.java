@@ -40,7 +40,7 @@ public class MainMenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
         mDatabase.keepSynced(true);
 
-        recView = (RecyclerView) findViewById(R.id.recview);
+        recView = (RecyclerView) findViewById(R.id.recView);
         recView.setHasFixedSize(true);
         recView.setLayoutManager(new LinearLayoutManager(this));
         list =new ArrayList<>();
