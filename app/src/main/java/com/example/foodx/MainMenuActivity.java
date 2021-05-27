@@ -38,7 +38,7 @@ public class MainMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-        mDatabase.keepSynced(true);
+
 
         recView = (RecyclerView) findViewById(R.id.recView);
         recView.setHasFixedSize(true);
