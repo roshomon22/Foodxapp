@@ -101,7 +101,7 @@ public class ShareFoodActivity extends AppCompatActivity {
                 if(!TextUtils.isEmpty(FoodItemNameString) &&!TextUtils.isEmpty(PhoneNumberString) && !TextUtils.isEmpty(LocationAreaString))
                 {
 
-                    FirebaseDatabase.getInstance().getReference("Posts").child("posts").push().setValue(post).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    FirebaseDatabase.getInstance().getReference("Posts").push().setValue(post).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful())

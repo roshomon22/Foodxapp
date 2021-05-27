@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/userid"
-            android:text="Name of the User"
+            android:text=""
             android:textStyle="normal"
             android:textSize="18sp"
             android:textColor="#000"
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/food_1"
-            android:text=" Food Item Name"
+            android:text=" "
             android:textSize="14sp"
             android:textColor="#000"
 

@@ -28,7 +28,7 @@ public class MainMenuActivity extends AppCompatActivity {
     private MyAdapter adapter;
     private ArrayList<Post> list;
     private FirebaseDatabase mDatabase= FirebaseDatabase.getInstance();
-    private DatabaseReference root = mDatabase.getReference().child("posts");
+    private DatabaseReference root = mDatabase.getReference().child("Posts");
     private Button LogoutBtn;
     private Button PendingRqstBtn;
     private Button ShareFoodBtn;
