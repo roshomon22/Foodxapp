@@ -21,12 +21,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.sql.Ref;
 import java.util.ArrayList;
 
 public class MainMenuActivity extends AppCompatActivity {
     private RecyclerView recView;
     private MyAdapter adapter;
+    private MyAdapter1 adapter1;
     private ArrayList<Post> list;
+    private ArrayList<User> list1;
+
+
     private FirebaseDatabase mDatabase= FirebaseDatabase.getInstance();
     private DatabaseReference RootRef = mDatabase.getInstance().getReference();
     private DatabaseReference usersRef=RootRef.child("Users");
@@ -47,10 +52,14 @@ public class MainMenuActivity extends AppCompatActivity {
         recView = (RecyclerView) findViewById(R.id.recView);
         recView.setHasFixedSize(true);
         recView.setLayoutManager(new LinearLayoutManager(this));
-        list =new ArrayList<>();
+        list =new ArrayList<Post>();
+        list1=new ArrayList<User>();
         adapter = new MyAdapter(this,list);
+        adapter1 = new MyAdapter1(this,list1);
+
 
         recView.setAdapter(adapter);
+        recView.setAdapter(adapter1);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -110,8 +119,8 @@ public class MainMenuActivity extends AppCompatActivity {
                     Post post = ds.getValue(Post.class);
                     list.add(post);
 
-
                 }
+
                 adapter.notifyDataSetChanged();
             }
 
@@ -122,8 +131,29 @@ public class MainMenuActivity extends AppCompatActivity {
                 System.out.println("The read failed: " + databaseError.getCode());
             }
         });
+
+        usersRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+
+                    User user = ds.getValue(User.class);
+                    list1.add(user);
+
+                }
+
+                adapter1.notifyDataSetChanged();
+            }
+
+
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed: " + databaseError.getCode());
+            }
+        });
+
     }
 }
-
 
 

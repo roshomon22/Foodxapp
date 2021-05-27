@@ -10,15 +10,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
-    ArrayList<Post> pList;
+
+public class MyAdapter1 extends RecyclerView.Adapter<MyAdapter1.MyViewHolder>{
+    ArrayList<User> uList;
 
 
     Context context;
 
-    public MyAdapter(Context context, ArrayList<Post> pList){
-        this.pList=pList;
+    public MyAdapter1(Context context, ArrayList<User> uList){
+        this.uList=uList;
         this.context=context;
 
     }
@@ -34,28 +36,29 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Post post=pList.get(position);
+        User user=uList.get(position);
+        holder.fullName.setText(user.getFullName());
 
-        holder.itemName.setText(post.getItemName());
 
     }
 
     @Override
     public int getItemCount() {
-        return pList.size();
+        return uList.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView itemName, UserID;
+        TextView  fullName;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-
-            itemName =itemView.findViewById(R.id.food_1);
+            fullName=itemView.findViewById(R.id.userid);
+            ;
 
         }
     }
 
 }
+
