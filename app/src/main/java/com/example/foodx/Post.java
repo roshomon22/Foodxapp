@@ -14,7 +14,7 @@ class Post {
         this.contactNumber = contactNumber;
         this.itemName = itemName;
         this.UserID = UserID;
-        this.Location = Location;
+        this.Location = location;
         this.expiryDate = expiryDate;
     }
     public String getItemName() {
