@@ -32,9 +32,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        Post model=mList.get(position);
-        holder.user.setText(model.getUserID());
-        holder.fooditem.setText(model.getItemName());
+        Post post=mList.get(position);
+        holder.user.setText(post.getUserID());
+        holder.fooditem.setText(post.getItemName());
 
     }
 

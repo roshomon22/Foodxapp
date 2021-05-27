@@ -103,8 +103,7 @@ public class MainMenuActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     Post post = ds.getValue(Post.class);
-                    Post model = null;
-                    list.add(model);
+                    list.add(post);
 
                 }
                 adapter.notifyDataSetChanged();
