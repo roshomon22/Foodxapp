@@ -1,6 +1,8 @@
 package com.example.foodx;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class MainMenuActivity extends AppCompatActivity {
-
+    RecyclerView recview;
     private Button LogoutBtn;
     private Button PendingRqstBtn;
     private Button ShareFoodBtn;
@@ -27,6 +29,10 @@ public class MainMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+        recview =(RecyclerView)findViewById(R.id.recview);
+        recview.setLayoutManager(new LinearLayoutManager(this));
+
+
         mAuth = FirebaseAuth.getInstance();
 
 
