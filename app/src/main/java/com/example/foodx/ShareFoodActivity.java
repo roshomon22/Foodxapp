@@ -33,7 +33,7 @@ public class ShareFoodActivity extends AppCompatActivity {
     private EditText PhoneNumber;
     private EditText LocationArea;
     private Button PostButton;
-
+    private String expiryDate;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +65,7 @@ public class ShareFoodActivity extends AppCompatActivity {
                 month=month+1;
                 Log.d(TAG,"onDateSet: mm/dd/yy"+ month+ "/" + day + "/" + year);
                 String date=month + "/" + day + "/" + year;
+                expiryDate = date;
                 mDisplayDate.setText(date);
             }
         };
@@ -92,12 +93,12 @@ public class ShareFoodActivity extends AppCompatActivity {
                 String LocationAreaString = LocationArea.getText().toString();
                 String UserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
-                Post post = new Post(FoodItemNameString, UserID, PhoneNumberString);
+                Post post = new Post(FoodItemNameString, UserID, PhoneNumberString, LocationAreaString, expiryDate);
 //                Log.d("Food item", FoodItemNameString);
 //                Log.d("Phone Number", PhoneNumberString);
 //                Log.d("UserID", UserID);
 
-                if(!TextUtils.isEmpty(FoodItemNameString) &&!TextUtils.isEmpty(PhoneNumberString) && !TextUtils.isEmpty(LocationAreaString) )
+                if(!TextUtils.isEmpty(FoodItemNameString) &&!TextUtils.isEmpty(PhoneNumberString) && !TextUtils.isEmpty(LocationAreaString))
                 {
 
                     FirebaseDatabase.getInstance().getReference("Posts").child("posts").push().setValue(post).addOnCompleteListener(new OnCompleteListener<Void>() {

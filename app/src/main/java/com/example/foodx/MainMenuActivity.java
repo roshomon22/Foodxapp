@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainMenuActivity extends AppCompatActivity {
 
@@ -68,6 +72,23 @@ public class MainMenuActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainMenuActivity.this, ShareActivity.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+
+
+        FirebaseDatabase.getInstance().getReference("Posts").child("posts").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                        Post post = ds.getValue(Post.class);
+                        System.out.println(post.contactNumber + " " +post.Location + " "+ post.itemName + " " + post.expiryDate + " " + post.UserID);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println("The read failed: " + databaseError.getCode());
             }
         });
     }
