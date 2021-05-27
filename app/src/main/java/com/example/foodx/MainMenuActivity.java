@@ -26,7 +26,8 @@ public class MainMenuActivity extends AppCompatActivity {
     private RecyclerView recView;
     private MyAdapter adapter;
     private ArrayList<Post> list;
-    private DatabaseReference mDatabase;
+    private FirebaseDatabase mDatabase= FirebaseDatabase.getInstance();
+    private DatabaseReference root = mDatabase.getReference().child("Posts");
     private Button LogoutBtn;
     private Button PendingRqstBtn;
     private Button ShareFoodBtn;
@@ -98,7 +99,7 @@ public class MainMenuActivity extends AppCompatActivity {
         });
 
 
-        FirebaseDatabase.getInstance().getReference("Posts").child("posts").addValueEventListener(new ValueEventListener() {
+        root.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
