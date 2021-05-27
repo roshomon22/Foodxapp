@@ -198,6 +198,7 @@
         android:id="@+id/recView"
         android:layout_width="352dp"
         android:layout_height="274dp"
+        android:background="#F3F3F3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"

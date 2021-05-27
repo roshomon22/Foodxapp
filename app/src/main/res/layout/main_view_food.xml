@@ -1,42 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="80dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="5dp"
-    android:elevation="5dp"
+    app:cardCornerRadius="0dp"
+    android:elevation="0dp"
+    android:background="#F3F3F3"
     app:cardUseCompatPadding="true">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#F3F3F3"
         android:padding="15dp">
 
 
-
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/userid"
-            android:text=""
-            android:textStyle="normal"
-            android:textSize="18sp"
-            android:textColor="#000"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="#F3F3F3"
+            android:fontFamily="@font/montserrat"
+            android:text="Great User"
 
-            android:layout_marginLeft="10dp"/>
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:textStyle="normal" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/food_1"
-            android:text=" "
-            android:textSize="14sp"
-            android:textColor="#000"
-
+            android:layout_width="83dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/userid"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp"
+            android:background="#F3F3F3"
+            android:fontFamily="@font/montserrat"
 
-
+            android:text=" Eggs"
+            android:textColor="#000"
+            android:textSize="12sp" />
 
 
     </RelativeLayout>
