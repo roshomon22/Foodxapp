@@ -30,7 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Calendar;
 
 public class ShareFoodActivity extends AppCompatActivity {
-    private static final String TAG ="ShareFoodActivity";
+    private static final String TAG = "ShareFoodActivity";
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
     private Button BackButton;
@@ -43,6 +43,7 @@ public class ShareFoodActivity extends AppCompatActivity {
     private FirebaseUser mCurrentUser;
     private DatabaseReference mUsers;
     private DatabaseReference mPost;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +61,7 @@ public class ShareFoodActivity extends AppCompatActivity {
                         ShareFoodActivity.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                         mDateSetListener,
-                        year,month,day);
+                        year, month, day);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 dialog.show();
 
@@ -71,9 +72,9 @@ public class ShareFoodActivity extends AppCompatActivity {
 
             @Override
             public void onDateSet(DatePicker view, int year, int month, int day) {
-                month=month+1;
-                Log.d(TAG,"onDateSet: mm/dd/yy"+ month+ "/" + day + "/" + year);
-                String date=month + "/" + day + "/" + year;
+                month = month + 1;
+                Log.d(TAG, "onDateSet: mm/dd/yy" + month + "/" + day + "/" + year);
+                String date = month + "/" + day + "/" + year;
                 expiryDate = date;
                 mDisplayDate.setText(date);
             }
@@ -88,10 +89,10 @@ public class ShareFoodActivity extends AppCompatActivity {
                 finish();
             }
         });
-        mPost=FirebaseDatabase.getInstance().getReference().child("Posts");
-        mAuth =FirebaseAuth.getInstance();
-        mCurrentUser=mAuth.getCurrentUser();
-        mUsers=FirebaseDatabase.getInstance().getReference().child("Users").child(mCurrentUser.getUid());
+        mPost = FirebaseDatabase.getInstance().getReference().child("Posts");
+        mAuth = FirebaseAuth.getInstance();
+        mCurrentUser = mAuth.getCurrentUser();
+        mUsers = FirebaseDatabase.getInstance().getReference().child("Users").child(mCurrentUser.getUid());
 
 
         FoodItemName = (EditText) findViewById(R.id.food_item_name);
@@ -108,14 +109,13 @@ public class ShareFoodActivity extends AppCompatActivity {
                 String UserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
 
-
-                Post post = new Post(FoodItemNameString, LocationAreaString, PhoneNumberString, UserID,expiryDate);
+                Post post = new Post(FoodItemNameString, LocationAreaString, PhoneNumberString, UserID, expiryDate);
 //                Log.d("Food item", FoodItemNameString);
 //                Log.d("Phone Number", PhoneNumberString);
 //                Log.d("UserID", UserID);
 
-                if(!TextUtils.isEmpty(FoodItemNameString) &&!TextUtils.isEmpty(PhoneNumberString) && !TextUtils.isEmpty(LocationAreaString))
-                {     final DatabaseReference newPost = mPost.push();
+                if (!TextUtils.isEmpty(FoodItemNameString) && !TextUtils.isEmpty(PhoneNumberString) && !TextUtils.isEmpty(LocationAreaString)) {
+                    final DatabaseReference newPost = mPost.push();
                     mUsers.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -127,12 +127,10 @@ public class ShareFoodActivity extends AppCompatActivity {
                             newPost.child("username").setValue(snapshot.child("fullName").getValue()).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
-                                    if(task.isSuccessful())
-                                    {Toast.makeText(ShareFoodActivity.this, "Post was added", Toast.LENGTH_LONG).show();
-                                        sendToMain();
-                                    }
-                                    else
-                                    {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(ShareFoodActivity.this, "Post was added", Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(ShareFoodActivity.this, MainMenuActivity.class));
+                                    } else {
                                         String eMsg = task.getException().getMessage();
                                         Toast.makeText(ShareFoodActivity.this, "error: " + eMsg, Toast.LENGTH_LONG).show();
 
@@ -151,19 +149,12 @@ public class ShareFoodActivity extends AppCompatActivity {
                     });
 
 
-
                 }
-
 
 
             }
         });
 
 
-    }
-    private void sendToMain() {
-        Intent mainMenuIntent = new Intent(ShareFoodActivity.this,MainMenuActivity.class);
-        startActivity(mainMenuIntent);
-        finish();
     }
 }
