@@ -98,6 +98,21 @@ public class MainMenuActivity extends AppCompatActivity {
 
         String UserID =FirebaseAuth.getInstance().getCurrentUser().getUid();
         //String userLoc = FirebaseAuth.getInstance().getCurrentUser().;
+//        FirebaseDatabase.getInstance().getReference("Users/" + UserID).addValueEventListener(new ValueEventListener() {
+//
+//
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                    User user = dataSnapshot.getValue(User.class);
+//                    System.out.println(user.location);
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                System.out.println("The read failed: " + databaseError.getCode());
+//            }
+//        });
 
         postsRef.addValueEventListener(new ValueEventListener() {
 
