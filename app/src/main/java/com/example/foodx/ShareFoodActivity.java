@@ -81,20 +81,20 @@ public class ShareFoodActivity extends AppCompatActivity {
         });
 
         FoodItemName = (EditText) findViewById(R.id.food_item_name);
-        PhoneNumber = (EditText) findViewById(R.id.phone_no);
         LocationArea = (EditText) findViewById(R.id.location_area);
+        PhoneNumber = (EditText) findViewById(R.id.phone_no);
         PostButton = (Button) findViewById(R.id.post_btn);
 
         PostButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String FoodItemNameString = FoodItemName.getText().toString();
-                String PhoneNumberString = PhoneNumber.getText().toString();
                 String LocationAreaString = LocationArea.getText().toString();
+                String PhoneNumberString = PhoneNumber.getText().toString();
                 String UserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
 
-                Post post = new Post(FoodItemNameString, UserID, PhoneNumberString, LocationAreaString, expiryDate);
+                Post post = new Post(FoodItemNameString, LocationAreaString, PhoneNumberString, UserID, expiryDate);
 //                Log.d("Food item", FoodItemNameString);
 //                Log.d("Phone Number", PhoneNumberString);
 //                Log.d("UserID", UserID);

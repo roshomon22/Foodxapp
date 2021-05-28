@@ -4,23 +4,21 @@ package com.example.foodx;
 public class Post {
 
     private String itemName;
-    private String UserID;
-    private String contactNumber;
     private String Location;
+    private String contactNumber;
+    private String UserID;
     private String expiryDate;
 
 
     public Post() {
 
     }
-    public Post(String itemName, String UserID, String  contactNumber, String location, String expiryDate)
+    public Post(String itemName, String location, String  contactNumber, String UserID, String expiryDate)
     {
-
-        this.contactNumber = contactNumber;
         this.itemName = itemName;
-
-        this.UserID = UserID;
         this.Location = location;
+        this.contactNumber = contactNumber;
+        this.UserID = UserID;
         this.expiryDate = expiryDate;
 
     }
@@ -43,6 +41,25 @@ public class Post {
 
     public String getExpiryDate() {
         return expiryDate;
+    }
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public void setLocation(String location) {
+        Location = location;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
+    }
+
+    public void setUserID(String userID) {
+        UserID = userID;
+    }
+
+    public void setExpiryDate(String expiryDate) {
+        this.expiryDate = expiryDate;
     }
 
 
