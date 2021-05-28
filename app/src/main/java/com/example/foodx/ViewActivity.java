@@ -11,14 +11,25 @@ import android.widget.TextView;
 public class ViewActivity extends AppCompatActivity {
     private Button back_button ;
 
-    TextView tv1,tv2;
+    TextView tv1,tv2,tv3,tv4,tv5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
         tv1=(TextView)findViewById(R.id.textView);
+        tv2=(TextView)findViewById(R.id.textView3);
+        tv3=(TextView)findViewById(R.id.textView4);
+        tv4=(TextView)findViewById(R.id.textView2);
+        tv5=(TextView)findViewById(R.id.textView5);
         tv1.setText(getIntent().getStringExtra("itemName"));
+        tv2.setText(getIntent().getStringExtra("Location"));
+        tv3.setText(getIntent().getStringExtra("Number"));
+        tv4.setText(getIntent().getStringExtra("UserID"));
+        tv5.setText(getIntent().getStringExtra("Expiry"));
+
+
+
 
 
 

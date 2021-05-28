@@ -103,7 +103,7 @@ public class MainMenuActivity extends AppCompatActivity {
 //
 //            @Override
 //            public void onDataChange(DataSnapshot dataSnapshot) {
-//                    User user = dataSnapshot.getValue(User.class);
+//                   User user = dataSnapshot.getValue(User.class);
 //                    System.out.println(user.location);
 //
 //            }
