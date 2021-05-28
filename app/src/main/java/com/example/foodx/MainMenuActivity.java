@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -105,11 +106,11 @@ public class MainMenuActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     Post post = ds.getValue(Post.class);
+                    if (!post.getUserID().equals(UserID)){
+                       // Log.d("foodskipped:", "onDataChange: skipping item "+post.getUserID()+" "+UserID);
                         list.add(post);
-
-
+                    }else {continue;}
                 }
-
                 adapter.notifyDataSetChanged();
             }
 
