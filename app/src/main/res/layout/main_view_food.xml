@@ -19,8 +19,8 @@
             android:id="@+id/userid"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
 
+            android:layout_marginLeft="10dp"
             android:background="#F3F3F3"
             android:fontFamily="@font/montserrat"
             android:text="Great User"
