@@ -23,7 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText registerPhoneText;
     private EditText registerEmailText;
     private EditText registerPassText;
-
+    private EditText registerLocation;
     private Button registerBtn;
     private Button Backtostrt;
     private FirebaseAuth mAuth;
@@ -37,6 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
         registerPassText = (EditText) findViewById(R.id.reg_pass);
         registerNameText = (EditText) findViewById(R.id.reg_name);
         registerPhoneText = (EditText) findViewById(R.id.reg_phone);
+        registerLocation = (EditText) findViewById(R.id.reg_location);
         mAuth = FirebaseAuth.getInstance();
         registerBtn = (Button) findViewById(R.id.reg_btn);
 
@@ -47,6 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String registerPass = registerPassText.getText().toString();
                 String registerPhone = registerPhoneText.getText().toString();
                 String registerName = registerNameText.getText().toString();
+                String registerLoc = registerLocation.getText().toString();
 
                 if(!TextUtils.isEmpty(registerEmail) &&!TextUtils.isEmpty(registerPhone) && !TextUtils.isEmpty(registerName) && !TextUtils.isEmpty(registerPass))
                 {
@@ -55,7 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful())
                             {
-                                User user = new User(registerName, registerEmail, registerPhone);
+                                User user = new User(registerName, registerEmail, registerPhone, registerLoc);
                                 FirebaseDatabase.getInstance().getReference("Users")
                                         .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                         .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
