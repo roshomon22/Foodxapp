@@ -1,12 +1,16 @@
 package com.example.foodx;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,6 +47,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
             holder.UserID.setText(post.getUserID());
             holder.itemName.setText(post.getItemName());
 
+        holder.view123.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), ViewActivity.class);
+                view.getContext().startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -50,17 +62,28 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         return pList.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView itemName, UserID;
+        Button view123;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             UserID = itemView.findViewById(R.id.userid);
             itemName =itemView.findViewById(R.id.food_1);
+            view123 = itemView.findViewById(R.id.view123);
+
+//            view123.setOnClickListener(this);
 
         }
+
+//        @Override
+//        public void onClick(View view) {
+//        Intent intent =  new Intent(view.getContext(),ViewActivity.class);
+//        view.getContext().startActivity(intent);
+//
+//        }
     }
 
 }

@@ -4,15 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -21,7 +18,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-
 import java.sql.Ref;
 import java.util.ArrayList;
 
@@ -29,9 +25,6 @@ public class MainMenuActivity extends AppCompatActivity {
     private RecyclerView recView;
     private MyAdapter adapter;
     private ArrayList<Post> list;
-
-
-
     private FirebaseDatabase mDatabase= FirebaseDatabase.getInstance();
     private DatabaseReference RootRef = mDatabase.getInstance().getReference();
     private DatabaseReference usersRef=RootRef.child("Users");
@@ -40,7 +33,6 @@ public class MainMenuActivity extends AppCompatActivity {
     private Button PendingRqstBtn;
     private Button ShareFoodBtn;
     private ImageView UserSharedItems;
-
     private FirebaseAuth mAuth;
    
 
@@ -49,23 +41,13 @@ public class MainMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-
         recView = (RecyclerView) findViewById(R.id.recView);
         recView.setHasFixedSize(true);
         recView.setLayoutManager(new LinearLayoutManager(this));
         list =new ArrayList<Post>();
-
         adapter = new MyAdapter(this,list);
-
-
-
         recView.setAdapter(adapter);
-
-
-
         mAuth = FirebaseAuth.getInstance();
-
-
 
         LogoutBtn = (Button) findViewById(R.id.logout_button);
         LogoutBtn.setOnClickListener(new View.OnClickListener() {

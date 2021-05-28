@@ -8,7 +8,7 @@
     tools:context=".ViewActivity">
 
     <Button
-        android:id="@+id/backBtn3"
+        android:id="@+id/item_view_back_btn"
         android:layout_width="32dp"
         android:layout_height="30dp"
         android:background="@drawable/abc_vector_test"
