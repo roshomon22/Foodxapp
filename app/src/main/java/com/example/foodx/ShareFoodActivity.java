@@ -92,11 +92,9 @@ public class ShareFoodActivity extends AppCompatActivity {
                 String PhoneNumberString = PhoneNumber.getText().toString();
                 String LocationAreaString = LocationArea.getText().toString();
                 String UserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                //todo: add a group dropdowm cant implement kmeans
 
-                String group = "random group";
 
-                Post post = new Post(FoodItemNameString, UserID, PhoneNumberString, LocationAreaString, expiryDate, group);
+                Post post = new Post(FoodItemNameString, UserID, PhoneNumberString, LocationAreaString, expiryDate);
 //                Log.d("Food item", FoodItemNameString);
 //                Log.d("Phone Number", PhoneNumberString);
 //                Log.d("UserID", UserID);

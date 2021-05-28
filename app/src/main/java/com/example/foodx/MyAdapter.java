@@ -47,13 +47,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
             holder.UserID.setText(post.getUserID());
             holder.itemName.setText(post.getItemName());
 
-        holder.view123.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), ViewActivity.class);
-                view.getContext().startActivity(intent);
-            }
-        });
 
     }
 
@@ -65,25 +58,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView itemName, UserID;
-        Button view123;
+
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             UserID = itemView.findViewById(R.id.userid);
             itemName =itemView.findViewById(R.id.food_1);
-            view123 = itemView.findViewById(R.id.view123);
-
-//            view123.setOnClickListener(this);
 
         }
 
-//        @Override
-//        public void onClick(View view) {
-//        Intent intent =  new Intent(view.getContext(),ViewActivity.class);
-//        view.getContext().startActivity(intent);
-//
-//        }
     }
 
 }
