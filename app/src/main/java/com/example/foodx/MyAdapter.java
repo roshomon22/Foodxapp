@@ -66,6 +66,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
              itemName = itemView.findViewById(R.id.userid);
              Location =itemView.findViewById(R.id.food_1);
 
+
         }
 
     }

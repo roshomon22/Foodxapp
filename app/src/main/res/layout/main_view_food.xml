@@ -33,13 +33,14 @@
             android:layout_width="83dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/userid"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="11dp"
             android:background="#F3F3F3"
             android:fontFamily="@font/montserrat"
 
             android:text=" "
             android:textColor="#000"
             android:textSize="14sp" />
+
 
         <Button
             android:id="@+id/view123"
