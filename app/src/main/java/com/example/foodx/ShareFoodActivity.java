@@ -20,7 +20,12 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 
@@ -34,6 +39,10 @@ public class ShareFoodActivity extends AppCompatActivity {
     private EditText LocationArea;
     private Button PostButton;
     private String expiryDate;
+    private FirebaseAuth mAuth;
+    private FirebaseUser mCurrentUser;
+    private DatabaseReference mUsers;
+    private DatabaseReference mPost;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +88,11 @@ public class ShareFoodActivity extends AppCompatActivity {
                 finish();
             }
         });
+        mPost=FirebaseDatabase.getInstance().getReference().child("Posts");
+        mAuth =FirebaseAuth.getInstance();
+        mCurrentUser=mAuth.getCurrentUser();
+        mUsers=FirebaseDatabase.getInstance().getReference().child("Users").child(mCurrentUser.getUid());
+
 
         FoodItemName = (EditText) findViewById(R.id.food_item_name);
         LocationArea = (EditText) findViewById(R.id.location_area);
@@ -94,30 +108,50 @@ public class ShareFoodActivity extends AppCompatActivity {
                 String UserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
 
-                Post post = new Post(FoodItemNameString, LocationAreaString, PhoneNumberString, UserID, expiryDate);
+
+                Post post = new Post(FoodItemNameString, LocationAreaString, PhoneNumberString, UserID,expiryDate);
 //                Log.d("Food item", FoodItemNameString);
 //                Log.d("Phone Number", PhoneNumberString);
 //                Log.d("UserID", UserID);
 
                 if(!TextUtils.isEmpty(FoodItemNameString) &&!TextUtils.isEmpty(PhoneNumberString) && !TextUtils.isEmpty(LocationAreaString))
-                {
-
-                    FirebaseDatabase.getInstance().getReference("Posts").push().setValue(post).addOnCompleteListener(new OnCompleteListener<Void>() {
+                {     final DatabaseReference newPost = mPost.push();
+                    mUsers.addValueEventListener(new ValueEventListener() {
                         @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if(task.isSuccessful())
-                            {
-                                Toast.makeText(ShareFoodActivity.this, "Post was added", Toast.LENGTH_LONG).show();
-                                sendToMain();
-                            }
-                            else
-                            {
-                                String eMsg = task.getException().getMessage();
-                                Toast.makeText(ShareFoodActivity.this, "error: " + eMsg, Toast.LENGTH_LONG).show();
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            newPost.child("contactNumber").setValue(PhoneNumberString);
+                            newPost.child("expiryDate").setValue(expiryDate);
+                            newPost.child("itemName").setValue(FoodItemNameString);
+                            newPost.child("location").setValue(LocationAreaString);
+                            newPost.child("userID").setValue(UserID);
+                            newPost.child("username").setValue(snapshot.child("fullName").getValue()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if(task.isSuccessful())
+                                    {Toast.makeText(ShareFoodActivity.this, "Post was added", Toast.LENGTH_LONG).show();
+                                        sendToMain();
+                                    }
+                                    else
+                                    {
+                                        String eMsg = task.getException().getMessage();
+                                        Toast.makeText(ShareFoodActivity.this, "error: " + eMsg, Toast.LENGTH_LONG).show();
 
-                            }
+                                    }
+
+                                }
+                            });
+
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
                         }
                     });
+
+
+
                 }
 
 

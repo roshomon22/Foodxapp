@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class ViewActivity extends AppCompatActivity {
     private Button back_button ;
 
-    TextView tv1,tv2,tv3,tv4,tv5;
+    TextView tv1,tv2,tv3,tv4,tv5,tv6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +25,9 @@ public class ViewActivity extends AppCompatActivity {
         tv1.setText(getIntent().getStringExtra("itemName"));
         tv2.setText(getIntent().getStringExtra("Location"));
         tv3.setText(getIntent().getStringExtra("Number"));
-        tv4.setText(getIntent().getStringExtra("UserID"));
+        tv4.setText(getIntent().getStringExtra("Username"));
         tv5.setText(getIntent().getStringExtra("Expiry"));
+
 
 
 

@@ -1,6 +1,8 @@
 
 package com.example.foodx;
 
+import com.google.firebase.database.DatabaseReference;
+
 public class Post {
 
     private String itemName;
@@ -8,20 +10,26 @@ public class Post {
     private String contactNumber;
     private String UserID;
     private String expiryDate;
+    private String Username;
 
 
     public Post() {
 
     }
-    public Post(String itemName, String location, String  contactNumber, String UserID, String expiryDate)
+    public Post(String itemName, String location, String  contactNumber, String UserID, String expiryDate, String username)
     {
         this.itemName = itemName;
         this.Location = location;
         this.contactNumber = contactNumber;
         this.UserID = UserID;
         this.expiryDate = expiryDate;
+        this.Username=username;
 
     }
+
+    public Post(String foodItemName,String locationAreaString, String phoneNumberString, String userID, String expiryDate) {
+    }
+
     public String getItemName() {
         return itemName;
     }
@@ -61,6 +69,16 @@ public class Post {
     public void setExpiryDate(String expiryDate) {
         this.expiryDate = expiryDate;
     }
+    public String getUsername() {
+        return Username;
+    }
+
+    public void setUsername(String username) {
+        Username = username;
+    }
+
+
+
 
 
 }
