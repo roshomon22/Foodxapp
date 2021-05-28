@@ -97,7 +97,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
 
         String UserID =FirebaseAuth.getInstance().getCurrentUser().getUid();
-
+        //String userLoc = FirebaseAuth.getInstance().getCurrentUser().;
 
         postsRef.addValueEventListener(new ValueEventListener() {
 
@@ -106,7 +106,7 @@ public class MainMenuActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     Post post = ds.getValue(Post.class);
-                    if (!post.getUserID().equals(UserID)){
+                    if (!post.getUserID().equals(UserID )){
                        // Log.d("foodskipped:", "onDataChange: skipping item "+post.getUserID()+" "+UserID);
                         list.add(post);
                     }else {continue;}
