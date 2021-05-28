@@ -32,15 +32,15 @@
 
     <ImageView
         android:id="@+id/imageView19"
-        android:layout_width="309dp"
-        android:layout_height="342dp"
+        android:layout_width="351dp"
+        android:layout_height="393dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="h,1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.726"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.182"
+        app:layout_constraintVertical_bias="0.159"
         app:srcCompat="@drawable/scroll_group_8" />
 
     <ImageView

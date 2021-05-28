@@ -37,7 +37,7 @@
             android:background="#F3F3F3"
             android:fontFamily="@font/montserrat"
 
-            android:text=" Eggs"
+            android:text=" "
             android:textColor="#000"
             android:textSize="14sp" />
 

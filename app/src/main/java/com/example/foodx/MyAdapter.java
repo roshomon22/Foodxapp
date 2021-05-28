@@ -44,7 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         String UserID =FirebaseAuth.getInstance().getCurrentUser().getUid();
         Post post=pList.get(position);
 
-            holder.UserID.setText(post.getUserID());
+            holder.Location.setText(post.getLocation());
             holder.itemName.setText(post.getItemName());
 
 
@@ -57,14 +57,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView itemName, UserID;
+        TextView itemName, Location;
 
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            UserID = itemView.findViewById(R.id.userid);
-            itemName =itemView.findViewById(R.id.food_1);
+             itemName = itemView.findViewById(R.id.userid);
+            Location =itemView.findViewById(R.id.food_1);
 
         }
 

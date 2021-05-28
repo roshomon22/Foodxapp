@@ -24,8 +24,8 @@
 
     <Button
         android:id="@+id/login_btn"
-        android:layout_width="217dp"
-        android:layout_height="56dp"
+        android:layout_width="218dp"
+        android:layout_height="51dp"
         android:background="@drawable/group_6"
         android:foreground="@drawable/group_4"
         android:text=""
