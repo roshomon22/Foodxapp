@@ -3,4 +3,5 @@
     <string name="button">Button</string>
     <string name="name_of_the_food_item">Name of the Food Item</string>
     <string name="select_expiry_date">Select Expiry Date</string>
+    <string name="itemname">ItemName</string>
 </resources>
