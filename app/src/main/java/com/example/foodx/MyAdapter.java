@@ -43,11 +43,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         String UserID =FirebaseAuth.getInstance().getCurrentUser().getUid();
+        final Post temp=pList.get(position);
         Post post=pList.get(position);
             holder.itemName.setText(post.getItemName());
             holder.Location.setText(post.getLocation());
             holder.View1.setOnClickListener((view)->{
                 Intent intent =new Intent(context, ViewActivity.class);
+                intent.putExtra("itemName",temp.getItemName());
+                intent.putExtra("Location",temp.getLocation());
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
                 
             });
