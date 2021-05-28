@@ -23,6 +23,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
     Context context;
 
+
     public MyAdapter(Context context, ArrayList<Post> pList){
         this.pList=pList;
         this.context=context;
@@ -45,6 +46,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
         Post post=pList.get(position);
             holder.itemName.setText(post.getItemName());
             holder.Location.setText(post.getLocation());
+            holder.View1.setOnClickListener((view)->{
+                Intent intent =new Intent(context, ViewActivity.class);
+                context.startActivity(intent);
+                
+            });
+                    
 
 
 
@@ -58,6 +65,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView itemName,Location;
+        Button View1;
 
 
         public MyViewHolder(@NonNull View itemView) {
@@ -65,7 +73,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
 
              itemName = itemView.findViewById(R.id.userid);
              Location =itemView.findViewById(R.id.food_1);
-
+             View1=itemView.findViewById(R.id.view123);
 
         }
 
