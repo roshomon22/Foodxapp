@@ -1,6 +1,8 @@
 package com.example.foodx;
 
 class User {
+
+
     public String fullName;
     public String email;
     public String phoneNo;
@@ -30,5 +32,20 @@ class User {
 
     public String getLocation() {
         return location;
+    }
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPhoneNo(String phoneNo) {
+        this.phoneNo = phoneNo;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }
