@@ -96,13 +96,7 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
-        button2 = (Button) findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //startActivity(new Intent(MainMenuActivity.this, RequestsActivity.class));
-            }
-        });
+
 
         String UserID =FirebaseAuth.getInstance().getCurrentUser().getUid();
         //String userLoc = CurrentUser.location;
