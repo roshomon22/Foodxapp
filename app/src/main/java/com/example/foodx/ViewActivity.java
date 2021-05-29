@@ -54,7 +54,7 @@ public class ViewActivity extends AppCompatActivity {
         mPend = FirebaseDatabase.getInstance().getReference().child("Pending");
         mAuth = FirebaseAuth.getInstance();
         mCurrentUser = mAuth.getCurrentUser();
-        mPost = FirebaseDatabase.getInstance().getReference().child("Posts").child(mCurrentUser.getUid());
+        mPost = FirebaseDatabase.getInstance().getReference().child("Posts");
 
         chat=findViewById((R.id.b_ch));
         chat.setOnClickListener(new View.OnClickListener() {
