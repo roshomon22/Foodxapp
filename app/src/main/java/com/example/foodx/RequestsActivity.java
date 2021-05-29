@@ -25,7 +25,7 @@ public class RequestsActivity extends AppCompatActivity {
     private ArrayList<Incoming> list3;
     private FirebaseAuth mAuth;
     private FirebaseDatabase mDatabase1= FirebaseDatabase.getInstance();
-    private DatabaseReference pendRef = mDatabase1.getInstance().getReference("Pending").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+    private DatabaseReference pendRef = mDatabase1.getInstance().getReference("Incoming").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
