@@ -88,9 +88,18 @@ public class ViewActivity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                    // Pending request sotrage
                     Pend pend = new Pend(ItemName,location, UserName);
                     FirebaseDatabase.getInstance().getReference("Pending").child( FirebaseAuth.getInstance().getCurrentUser().getUid()).push().setValue(pend);
+
+                    //Incoming Storage
+                    Incoming incoming = new Incoming(ItemName,location, UserName);
+                    FirebaseDatabase.getInstance().getReference("Incoming").child(uid).push().setValue(incoming);
+
+
                 startActivity(new Intent(ViewActivity.this, PendingActivity.class));
+
             }
         });
 
