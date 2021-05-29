@@ -76,41 +76,13 @@ public class ViewActivity extends AppCompatActivity {
             }
         });
         button3 = findViewById(R.id.button3);
-
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                String UserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                final DatabaseReference newPend = mPend.push();
-                mPost.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot1) {
-
-                        newPend.child("items").setValue(snapshot1.child("itemName").getValue()).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(ViewActivity.this, "Post was added", Toast.LENGTH_LONG).show();
-                                    startActivity(new Intent(ViewActivity.this, PendingActivity.class));
-                                } else {
-                                    String eMsg = task.getException().getMessage();
-                                    Toast.makeText(ViewActivity.this, "error: " + eMsg, Toast.LENGTH_LONG).show();
-
-                                }
-
-                            }
-                        });
-
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
+            public void onClick(View v) {
 
             }
         });
+
+
     }
 }
