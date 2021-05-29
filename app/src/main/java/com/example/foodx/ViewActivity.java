@@ -53,7 +53,7 @@ public class ViewActivity extends AppCompatActivity {
         mPend = FirebaseDatabase.getInstance().getReference().child("Pending");
         mAuth = FirebaseAuth.getInstance();
         mCurrentUser = mAuth.getCurrentUser();
-        mPost = FirebaseDatabase.getInstance().getReference().child("Posts");
+        mPost = FirebaseDatabase.getInstance().getReference().child("Posts").child(mCurrentUser.getUid());;
 
 
         back_button=findViewById(R.id.item_view_back_btn);
@@ -70,12 +70,13 @@ public class ViewActivity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String UserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
                 final DatabaseReference newPend = mPend.push();
                 mPost.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                        newPend.child("Pending").setValue(snapshot.child("itemName").getValue()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        newPend.child("items").setValue(snapshot.child("itemName").getValue()).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
