@@ -89,9 +89,7 @@ public class MainMenuActivity extends AppCompatActivity {
         UserSharedItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainMenuActivity.this, ShareActivity.class);
-                startActivity(intent);
-                finish();
+                startActivity(new Intent(MainMenuActivity.this, ShareActivity.class));
             }
         });
 
@@ -113,6 +111,7 @@ public class MainMenuActivity extends AppCompatActivity {
 //                System.out.println("The read failed: " + databaseError.getCode());
 //            }
 //        });
+
 
         postsRef.addValueEventListener(new ValueEventListener() {
 
