@@ -33,19 +33,7 @@
             android:layout_width="83dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/userid3"
-            android:layout_marginLeft="11dp"
-            android:background="#F3F3F3"
-            android:fontFamily="@font/montserrat"
-
-            android:text=" "
-            android:textColor="#000"
-            android:textSize="11sp" />
-        <TextView
-            android:id="@+id/food_14"
-            android:layout_width="83dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/userid3"
-            android:layout_marginLeft="130dp"
+            android:layout_marginLeft="14dp"
             android:background="#F3F3F3"
             android:fontFamily="@font/montserrat"
 
