@@ -30,11 +30,7 @@ public class ViewActivity extends AppCompatActivity {
     private FirebaseUser mCurrentUser;
     private DatabaseReference mPend;
     private DatabaseReference mPost;
-    private EditText FoodItemName;
-    private EditText PhoneNumber;
-    private EditText LocationArea;
-    private Button PostButton;
-    private String expiryDate;
+
     TextView tv1, tv2, tv3, tv4, tv5, tv6;
 
     @Override
@@ -88,9 +84,9 @@ public class ViewActivity extends AppCompatActivity {
                 final DatabaseReference newPend = mPend.push();
                 mPost.addValueEventListener(new ValueEventListener() {
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    public void onDataChange(@NonNull DataSnapshot snapshot1) {
 
-                        newPend.child("items").setValue(snapshot.child("itemName").getValue()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        newPend.child("items").setValue(snapshot1.child("itemName").getValue()).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
