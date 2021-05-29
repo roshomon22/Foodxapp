@@ -75,6 +75,16 @@ public class MainMenuActivity extends AppCompatActivity {
                 finish();
             }
         });
+        button2 = (Button) findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainMenuActivity.this, RequestsActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         ShareFoodBtn = (Button) findViewById(R.id.ShrFoodBtn);
         ShareFoodBtn.setOnClickListener(new View.OnClickListener() {

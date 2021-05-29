@@ -153,8 +153,8 @@
 
     <ImageView
         android:id="@+id/UserProfile"
-        android:layout_width="47dp"
-        android:layout_height="52dp"
+        android:layout_width="42dp"
+        android:layout_height="48dp"
         android:clickable="true"
         android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
