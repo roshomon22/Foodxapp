@@ -20,22 +20,22 @@
 
     <ImageView
         android:id="@+id/imageView53"
-        android:layout_width="434dp"
-        android:layout_height="510dp"
+        android:layout_width="443dp"
+        android:layout_height="466dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/opop" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="378dp"
-        android:layout_height="433dp"
+        android:id="@+id/recView4"
+        android:layout_width="363dp"
+        android:layout_height="400dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.962" />
+        app:layout_constraintVertical_bias="0.939" />
 
     <Button
         android:id="@+id/button4"
