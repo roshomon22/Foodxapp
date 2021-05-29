@@ -25,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 public class ViewActivity extends AppCompatActivity {
     private Button button3;
     private Button back_button;
+    private Button chat;
     private FirebaseAuth mAuth;
     private FirebaseUser mCurrentUser;
     private DatabaseReference mPend;
@@ -53,7 +54,18 @@ public class ViewActivity extends AppCompatActivity {
         mPend = FirebaseDatabase.getInstance().getReference().child("Pending");
         mAuth = FirebaseAuth.getInstance();
         mCurrentUser = mAuth.getCurrentUser();
-        mPost = FirebaseDatabase.getInstance().getReference().child("Posts").child(mCurrentUser.getUid());;
+        mPost = FirebaseDatabase.getInstance().getReference().child("Posts").child(mCurrentUser.getUid());
+
+        chat=findViewById((R.id.b_ch));
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ViewActivity.this, MessageActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
 
 
         back_button=findViewById(R.id.item_view_back_btn);
