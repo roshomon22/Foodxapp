@@ -5,17 +5,27 @@ public class Chat {
     private  String sender;
     private String receiver;
     private  String message;
+    private String Itemid;
 
-    private Chat (String sender,String receiver, String message)
+    private Chat (String sender,String receiver, String message, String Itemid)
     {
         this.sender=sender;
         this.receiver=receiver;
         this.message=message;
+        this.Itemid = Itemid;
 
     }
 
     public Chat(){
 
+    }
+
+    public String getItemid() {
+        return Itemid;
+    }
+
+    public void setItemid(String itemid) {
+        Itemid = itemid;
     }
 
     public String getSender() {

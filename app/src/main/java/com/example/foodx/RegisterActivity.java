@@ -57,7 +57,9 @@ public class RegisterActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful())
                             {
-                                User user = new User(registerName, registerEmail, registerPhone, registerLoc);
+
+                                User user = new User(registerName, registerEmail, registerPhone, registerLoc,"0");
+                                user.setId(FirebaseAuth.getInstance().getCurrentUser().getUid());
                                 FirebaseDatabase.getInstance().getReference("Users")
                                         .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                         .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -65,6 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if(task.isSuccessful())
                                         {
+
                                             Toast.makeText(RegisterActivity.this, "Registration Successful", Toast.LENGTH_LONG).show();
                                             sendToMain();
                                         }

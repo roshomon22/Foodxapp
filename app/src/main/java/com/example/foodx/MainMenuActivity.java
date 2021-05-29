@@ -36,6 +36,7 @@ public class MainMenuActivity extends AppCompatActivity {
     private Button ShareFoodBtn;
     private Button UserSharedItems;
     private Button button2;
+    private  ImageView myrequest;
     private FirebaseAuth mAuth;
 
 
@@ -52,6 +53,14 @@ public class MainMenuActivity extends AppCompatActivity {
         adapter = new MyAdapter(this,list);
         recView.setAdapter(adapter);
         mAuth = FirebaseAuth.getInstance();
+
+        myrequest = findViewById(R.id.MyRequests);
+        myrequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainMenuActivity.this,ChatView.class));
+            }
+        });
 
         LogoutBtn = (Button) findViewById(R.id.logout_button);
         LogoutBtn.setOnClickListener(new View.OnClickListener() {
