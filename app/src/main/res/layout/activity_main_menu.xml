@@ -156,14 +156,14 @@
         android:layout_width="41dp"
         android:layout_height="45dp"
         android:clickable="true"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.813"
+        app:layout_constraintHorizontal_bias="0.826"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/profile"
-        android:contentDescription="TODO" />
+        app:srcCompat="@drawable/profile" />
 
     <Button
         android:id="@+id/ShrFoodBtn"
@@ -206,6 +206,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.847" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="31dp"
+        android:layout_height="30dp"
+        android:background="@drawable/g_999"
+        android:foreground="@drawable/g_999"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.98" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

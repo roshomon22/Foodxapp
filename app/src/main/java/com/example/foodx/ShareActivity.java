@@ -43,9 +43,11 @@ public class ShareActivity extends AppCompatActivity {
 
         backbtn5= (Button) findViewById(R.id.backBtn5);
         backbtn5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ShareActivity.this, MainMenuActivity.class));
+                                        @Override
+                                        public void onClick(View view) {
+                                            startActivity(new Intent(ShareActivity.this, MainMenuActivity.class));
+                                        }
+                                    });
 
                 String UserID =FirebaseAuth.getInstance().getCurrentUser().getUid();
                 //String userLoc = FirebaseAuth.getInstance().getCurrentUser().;
@@ -57,7 +59,7 @@ public class ShareActivity extends AppCompatActivity {
 //                   User user = dataSnapshot.getValue(User.class);
 //                    System.out.println(user.location);
 //
-//            }
+//
 //
 //            @Override
 //            public void onCancelled(DatabaseError databaseError) {
@@ -89,7 +91,7 @@ public class ShareActivity extends AppCompatActivity {
                         System.out.println("The read failed: " + databaseError.getCode());
                     }
                 });
-            }
-        });
+
+
     }
 }

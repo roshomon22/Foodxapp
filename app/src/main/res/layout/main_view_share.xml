@@ -44,8 +44,8 @@
 
         <Button
             android:id="@+id/view123"
-            android:layout_width="56dp"
-            android:layout_height="47dp"
+            android:layout_width="44dp"
+            android:layout_height="39dp"
             android:layout_alignLeft="@id/userid1"
             android:layout_marginLeft="241dp"
             android:background="@drawable/g_777"
