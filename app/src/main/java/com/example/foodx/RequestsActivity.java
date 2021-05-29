@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.foodx.Incoming;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -57,6 +58,8 @@ public class RequestsActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
+
+
                     Incoming Incoming = ds.getValue(Incoming.class);
                     //Log.d("foodskipped:", "onDataChange: skipping item "+pend.getUserID()+" "+UserID);
                     list3.add(Incoming);

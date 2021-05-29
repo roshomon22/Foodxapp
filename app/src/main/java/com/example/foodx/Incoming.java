@@ -5,27 +5,19 @@ class Incoming {
     private String Item;
     private String location;
     private String ReqUserID;
-    private String Name;
+
 
 
     public Incoming() {
 
     }
-    public Incoming(String item, String location, String ReqUserID,String name)
+    public Incoming(String item, String location, String ReqUserID)
     {
         this.Item = item;
         this.location = location;
         this.ReqUserID = ReqUserID;
-        this.Name=name;
 
 
-    }
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
     }
 
 

@@ -10,7 +10,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -43,10 +46,9 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.YrViewHolder>{
     public void onBindViewHolder(@NonNull YrViewHolder holder3, int position3) {
 
         Incoming Incoming =pList3.get(position3);
-
         holder3.Item.setText(Incoming.getItem());
         holder3.location.setText(Incoming.getLocation());
-       holder3.ReqUserID.setText(Incoming.getReqUserID());
+        holder3.ReqUserID.setText(Incoming.getReqUserID());
 
 
 

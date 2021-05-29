@@ -38,7 +38,7 @@ public class MainMenuActivity extends AppCompatActivity {
     private Button button2;
     private ImageView user;
     private FirebaseAuth mAuth;
-
+    private ImageView myrequest;
 
 
     @Override
@@ -54,7 +54,7 @@ public class MainMenuActivity extends AppCompatActivity {
         recView.setAdapter(adapter);
         mAuth = FirebaseAuth.getInstance();
 
-        myrequest = findViewById(R.id.MyRequests);
+        myrequest = (ImageView) findViewById(R.id.MyRequests);
         myrequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
