@@ -31,7 +31,7 @@ public class ViewActivity extends AppCompatActivity {
     private DatabaseReference mPend;
     private DatabaseReference mPost;
 
-    TextView tv1, tv2, tv3, tv4, tv5, tv6;
+    TextView tv1, tv2, tv3, tv4, tv5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,9 +79,11 @@ public class ViewActivity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(ViewActivity.this, PendingActivity.class);
+                startActivity(intent);
+                finish();
 
-            }
-        });
+            }        });
 
 
     }
