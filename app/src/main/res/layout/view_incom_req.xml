@@ -16,7 +16,7 @@
 
 
         <TextView
-            android:id="@+id/userid2"
+            android:id="@+id/userid3"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
 
@@ -29,10 +29,10 @@
             android:textStyle="normal" />
 
         <TextView
-            android:id="@+id/user1"
+            android:id="@+id/user2"
             android:layout_width="83dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/userid2"
+            android:layout_below="@id/userid3"
             android:layout_marginLeft="11dp"
             android:background="#F3F3F3"
             android:fontFamily="@font/montserrat"
@@ -41,10 +41,10 @@
             android:textColor="#000"
             android:textSize="11sp" />
         <TextView
-            android:id="@+id/food_13"
+            android:id="@+id/food_14"
             android:layout_width="83dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/userid2"
+            android:layout_below="@id/userid3"
             android:layout_marginLeft="130dp"
             android:background="#F3F3F3"
             android:fontFamily="@font/montserrat"
@@ -54,10 +54,10 @@
             android:textSize="11sp" />
 
         <Button
-            android:id="@+id/view123"
+            android:id="@+id/view1235"
             android:layout_width="44dp"
             android:layout_height="39dp"
-            android:layout_alignLeft="@id/userid2"
+            android:layout_alignLeft="@id/userid3"
             android:layout_marginLeft="240dp"
             android:background="@drawable/g_777"
             android:foreground="@drawable/g_777"
