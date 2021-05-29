@@ -90,11 +90,12 @@ public class ViewActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                     // Pending request sotrage
+                    String curUserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
                     Pend pend = new Pend(ItemName,location, UserName);
-                    FirebaseDatabase.getInstance().getReference("Pending").child( FirebaseAuth.getInstance().getCurrentUser().getUid()).push().setValue(pend);
+                    FirebaseDatabase.getInstance().getReference("Pending").child(curUserID).push().setValue(pend);
 
                     //Incoming Storage
-                    Incoming incoming = new Incoming(ItemName,location, UserName);
+                    Incoming incoming = new Incoming(ItemName,location,curUserID);
                     FirebaseDatabase.getInstance().getReference("Incoming").child(uid).push().setValue(incoming);
 
 

@@ -2,17 +2,17 @@ package com.example.foodx;
 
 class Incoming {
 
-    private String Item,location,UserName;
+    private String Item,location,ReqUserID;
 
 
     public Incoming() {
 
     }
-    public Incoming(String item, String location, String UserName)
+    public Incoming(String item, String location, String ReqUserID)
     {
         this.Item = item;
         this.location = location;
-        this.UserName = UserName;
+        this.ReqUserID = ReqUserID;
 
 
     }
@@ -38,11 +38,11 @@ class Incoming {
 
 
 
-    public void setUserName(String UserName) {
-        this.UserName = UserName;
+    public void setReqUserID(String ReqUserID) {
+        this.ReqUserID = ReqUserID;
     }
 
-    public String getUserName() {return UserName;}
+    public String getReqUserID() {return ReqUserID;}
 
 
 
