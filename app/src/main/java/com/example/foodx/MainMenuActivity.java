@@ -151,13 +151,14 @@ public class MainMenuActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     Post post = ds.getValue(Post.class);
-                    Log.d("foodskipped:", "onDataChange: skipping item "+post.getUserID()+" "+UserID);
+                   // Log.d("foodskipped:", "onDataChange: skipping item "+post.getUserID()+" "+UserID);
                     if (!post.getUserID().equals(UserID)){
                        // Log.d("foodskipped:", "onDataChange: skipping item "+post.getUserID()+" "+UserID);
                         list.add(post);
-                    }else {continue;}
+                    }
+                    adapter.notifyDataSetChanged();
                 }
-                adapter.notifyDataSetChanged();
+
             }
 
 

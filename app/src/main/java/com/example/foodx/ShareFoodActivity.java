@@ -124,20 +124,8 @@ public class ShareFoodActivity extends AppCompatActivity {
                             newPost.child("itemName").setValue(FoodItemNameString);
                             newPost.child("location").setValue(LocationAreaString);
                             newPost.child("userID").setValue(UserID);
-                            newPost.child("username").setValue(snapshot.child("fullName").getValue()).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(ShareFoodActivity.this, "Post was added", Toast.LENGTH_LONG).show();
-                                        startActivity(new Intent(ShareFoodActivity.this, ShareActivity.class));
-                                    } else {
-                                        String eMsg = task.getException().getMessage();
-                                        Toast.makeText(ShareFoodActivity.this, "error: " + eMsg, Toast.LENGTH_LONG).show();
-
-                                    }
-
-                                }
-                            });
+                            newPost.child("username").setValue(snapshot.child("fullName").getValue());
+                            startActivity(new Intent(ShareFoodActivity.this, ShareActivity.class));
 
 
                         }

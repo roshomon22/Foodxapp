@@ -27,11 +27,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chat_recycler"
-        android:layout_width="match_parent"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_above="@id/send"
         android:layout_below="@+id/usrname"
-        android:layout_marginTop="-1dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:layout_marginBottom="26dp"
         android:background="#e6e6e6" />
 
     <RelativeLayout
