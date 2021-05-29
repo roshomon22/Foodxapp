@@ -45,7 +45,7 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.YrViewHolder>{
         Incoming Incoming =pList3.get(position3);
         holder3.Item.setText(Incoming.getItem());
         holder3.location.setText(Incoming.getLocation());
-        holder3.ReqUserID.setText(Incoming.getReqUserID());
+       // holder3.ReqUserID.setText(Incoming.getReqUserID());
 
 
 
@@ -69,7 +69,7 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.YrViewHolder>{
 
             Item= itemView.findViewById(R.id.user2);
             location =itemView.findViewById(R.id.food_14);
-            ReqUserID = itemView.findViewById(R.id.userid3);
+            //ReqUserID = itemView.findViewById(R.id.userid3);
 
 
 

@@ -23,7 +23,7 @@
             android:layout_marginLeft="10dp"
             android:background="#F3F3F3"
             android:fontFamily="@font/montserrat"
-            android:text="Great User"
+            android:text=""
             android:textColor="#000"
             android:textSize="18sp"
             android:textStyle="normal" />
