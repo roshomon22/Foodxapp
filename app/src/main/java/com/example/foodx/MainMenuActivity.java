@@ -36,6 +36,7 @@ public class MainMenuActivity extends AppCompatActivity {
     private Button ShareFoodBtn;
     private Button UserSharedItems;
     private Button button2;
+    private ImageView user;
     private FirebaseAuth mAuth;
 
 
@@ -103,6 +104,14 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainMenuActivity.this, ShareActivity.class));
+            }
+        });
+
+        user = (ImageView) findViewById(R.id.UserProfile);
+        user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainMenuActivity.this, ProfileUser.class));
             }
         });
 
