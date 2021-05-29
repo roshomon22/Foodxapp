@@ -3,6 +3,7 @@ package com.example.foodx;
 
 public class Pend {
 
+
     private String Item,location,UserName;
 
 
@@ -19,12 +20,12 @@ public class Pend {
     }
 
 
-    public void setItemName(String item) {
-        this.Item = item;
+    public String getItem() {
+        return Item;
     }
 
-    public String getItemName() {
-        return Item;
+    public void setItem(String item) {
+        Item = item;
     }
 
 
