@@ -57,7 +57,7 @@ public class MessageActivity extends AppCompatActivity {
                 send_text.setText("");
             }
         });
-
+        Log.d("checking in ", "onCreate: "+ UserId);
         reference = FirebaseDatabase.getInstance().getReference("Users").child(UserId);
         reference.addValueEventListener(new ValueEventListener() {
             @Override

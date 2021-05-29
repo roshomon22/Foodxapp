@@ -51,6 +51,7 @@ public class ViewActivity extends AppCompatActivity {
         tv3.setText(getIntent().getStringExtra("Number"));
         tv4.setText(getIntent().getStringExtra("Username"));
         tv5.setText(getIntent().getStringExtra("Expiry"));
+        String uid= getIntent().getStringExtra("userid");
         mPend = FirebaseDatabase.getInstance().getReference().child("Pending");
         mAuth = FirebaseAuth.getInstance();
         mCurrentUser = mAuth.getCurrentUser();
@@ -61,6 +62,7 @@ public class ViewActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ViewActivity.this, MessageActivity.class);
+                intent.putExtra("userid",uid);
                 startActivity(intent);
                 finish();
 
