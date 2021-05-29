@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Foodx">
-        <activity android:name=".RequestsActivity"></activity>
+        <activity android:name=".ProfileUser"></activity>
+        <activity android:name=".RequestsActivity" />
         <activity android:name=".MessageActivity" />
         <activity android:name=".ShareFoodActivity" />
         <activity android:name=".ShareActivity" />
