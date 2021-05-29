@@ -56,7 +56,9 @@ public class ViewActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mCurrentUser = mAuth.getCurrentUser();
         mPost = FirebaseDatabase.getInstance().getReference().child("Posts");
-
+        String ItemName = getIntent().getStringExtra("itemName");
+        String location = getIntent().getStringExtra("Location");
+        String UserName = getIntent().getStringExtra("Username");
         chat=findViewById((R.id.b_ch));
         chat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,42 +81,17 @@ public class ViewActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+
         button3 = findViewById(R.id.button3);
 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String UserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                final DatabaseReference newPend = mPend.push();
-                mPost.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                        newPend.child("items").setValue(snapshot.child("itemName").getValue()).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(ViewActivity.this, "Post was added", Toast.LENGTH_LONG).show();
-                                    startActivity(new Intent(ViewActivity.this, PendingActivity.class));
-                                } else {
-                                    String eMsg = task.getException().getMessage();
-                                    Toast.makeText(ViewActivity.this, "error: " + eMsg, Toast.LENGTH_LONG).show();
-
-                                }
-
-                            }
-                        });
-
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-
+                    Pend pend = new Pend(ItemName,location, UserName);
+                    FirebaseDatabase.getInstance().getReference("Pending").child( FirebaseAuth.getInstance().getCurrentUser().getUid()).push().setValue(pend);
             }
         });
+
     }
 }
