@@ -129,7 +129,7 @@ public class ShareFoodActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
                                         Toast.makeText(ShareFoodActivity.this, "Post was added", Toast.LENGTH_LONG).show();
-                                        startActivity(new Intent(ShareFoodActivity.this, MainMenuActivity.class));
+                                        startActivity(new Intent(ShareFoodActivity.this, ShareActivity.class));
                                     } else {
                                         String eMsg = task.getException().getMessage();
                                         Toast.makeText(ShareFoodActivity.this, "error: " + eMsg, Toast.LENGTH_LONG).show();
