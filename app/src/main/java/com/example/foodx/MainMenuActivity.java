@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -35,7 +36,8 @@ public class MainMenuActivity extends AppCompatActivity {
     private Button ShareFoodBtn;
     private ImageView UserSharedItems;
     private FirebaseAuth mAuth;
-   
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +97,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
 
         String UserID =FirebaseAuth.getInstance().getCurrentUser().getUid();
-        //String userLoc = FirebaseAuth.getInstance().getCurrentUser().;
+        //String userLoc = CurrentUser.location;
 //        FirebaseDatabase.getInstance().getReference("Users/" + UserID).addValueEventListener(new ValueEventListener() {
 //
 //
@@ -120,7 +122,8 @@ public class MainMenuActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     Post post = ds.getValue(Post.class);
-                    if (!post.getUserID().equals(UserID )){
+                    Log.d("foodskipped:", "onDataChange: skipping item "+post.getUserID()+" "+UserID);
+                    if (!post.getUserID().equals(UserID)){
                        // Log.d("foodskipped:", "onDataChange: skipping item "+post.getUserID()+" "+UserID);
                         list.add(post);
                     }else {continue;}
