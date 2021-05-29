@@ -54,10 +54,6 @@ public class ViewActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mCurrentUser = mAuth.getCurrentUser();
         mPost = FirebaseDatabase.getInstance().getReference().child("Posts");
-        FoodItemName = (EditText) findViewById(R.id.food_item_name);
-        LocationArea = (EditText) findViewById(R.id.location_area);
-        PhoneNumber = (EditText) findViewById(R.id.phone_no);
-        PostButton = (Button) findViewById(R.id.post_btn);
 
 
         back_button=findViewById(R.id.item_view_back_btn);
@@ -79,7 +75,7 @@ public class ViewActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                        newPend.child("itemName").child("location").setValue(snapshot.child("itemName").getValue(),snapshot.child("location").getValue()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        newPend.child("Pending").setValue(snapshot.child("itemName").getValue()).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
