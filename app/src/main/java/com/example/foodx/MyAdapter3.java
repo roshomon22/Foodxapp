@@ -70,8 +70,8 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.YrViewHolder>{
         public YrViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            Item= itemView.findViewById(R.id.user2);
-            location =itemView.findViewById(R.id.food_14);
+            Item= itemView.findViewById(R.id.userid3);
+            location =itemView.findViewById(R.id.user2);
             //ReqUserID = itemView.findViewById(R.id.userid3);
 
 
