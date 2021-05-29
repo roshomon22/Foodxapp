@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="0dp"
+    android:elevation="0dp"
+    android:background="#F3F3F3"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="390dp"
+        android:layout_height="83dp"
+        android:background="#F3F3F3"
+        android:padding="15dp">
+
+
+        <TextView
+            android:id="@+id/userid2"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="10dp"
+            android:background="#F3F3F3"
+            android:fontFamily="@font/montserrat"
+            android:text="Great User"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/user1"
+            android:layout_width="83dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userid2"
+            android:layout_marginLeft="11dp"
+            android:background="#F3F3F3"
+            android:fontFamily="@font/montserrat"
+
+            android:text=" "
+            android:textColor="#000"
+            android:textSize="10sp" />
+        <TextView
+            android:id="@+id/food_13"
+            android:layout_width="83dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userid2"
+            android:layout_marginLeft="130dp"
+            android:background="#F3F3F3"
+            android:fontFamily="@font/montserrat"
+
+            android:text=" "
+            android:textColor="#000"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/view123"
+            android:layout_width="44dp"
+            android:layout_height="39dp"
+            android:layout_alignLeft="@id/userid2"
+            android:layout_marginLeft="241dp"
+            android:background="@drawable/g_777"
+            android:foreground="@drawable/g_777"
+            android:text="" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

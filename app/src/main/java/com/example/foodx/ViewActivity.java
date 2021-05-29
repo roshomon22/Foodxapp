@@ -90,6 +90,7 @@ public class ViewActivity extends AppCompatActivity {
             public void onClick(View view) {
                     Pend pend = new Pend(ItemName,location, UserName);
                     FirebaseDatabase.getInstance().getReference("Pending").child( FirebaseAuth.getInstance().getCurrentUser().getUid()).push().setValue(pend);
+                startActivity(new Intent(ViewActivity.this, PendingActivity.class));
             }
         });
 
