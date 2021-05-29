@@ -85,20 +85,6 @@
         app:layout_constraintVertical_bias="0.471"
         app:srcCompat="@drawable/explore" />
 
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="250dp"
-        android:layout_height="31dp"
-        android:layout_marginBottom="15dp"
-        android:background="#DDDDDD"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="h,1:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.888"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.481" />
-
     <Button
         android:id="@+id/logout_button"
         android:layout_width="64dp"
@@ -221,15 +207,16 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="189dp"
-        android:layout_height="45dp"
+        android:layout_width="173dp"
+        android:layout_height="39dp"
         android:background="@drawable/g_100"
         android:foreground="@drawable/g_100"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.881"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.264" />
+        app:layout_constraintVertical_bias="0.471" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
