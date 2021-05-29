@@ -16,9 +16,10 @@ public class Post {
     public Post() {
 
     }
-    public Post(String itemName, String location, String  contactNumber, String UserID, String expiryDate, String username)
+    public Post(String itemName,String location, String  contactNumber, String UserID, String expiryDate, String username)
     {
         this.itemName = itemName;
+
         this.Location = location;
         this.contactNumber = contactNumber;
         this.UserID = UserID;
