@@ -33,7 +33,7 @@ public class MainMenuActivity extends AppCompatActivity {
     private Button LogoutBtn;
     private Button PendingRqstBtn;
     private Button ShareFoodBtn;
-    private ImageView UserSharedItems;
+    private Button UserSharedItems;
     private FirebaseAuth mAuth;
    
 
@@ -85,7 +85,7 @@ public class MainMenuActivity extends AppCompatActivity {
         });
 
 
-        UserSharedItems = (ImageView) findViewById(R.id.UserProfile);
+        UserSharedItems = (Button) findViewById(R.id.button);
         UserSharedItems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
