@@ -39,7 +39,7 @@
 
             android:text=" "
             android:textColor="#000"
-            android:textSize="10sp" />
+            android:textSize="11sp" />
         <TextView
             android:id="@+id/food_13"
             android:layout_width="83dp"
@@ -51,7 +51,7 @@
 
             android:text=" "
             android:textColor="#000"
-            android:textSize="10sp" />
+            android:textSize="11sp" />
 
         <Button
             android:id="@+id/view123"
