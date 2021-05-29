@@ -140,26 +140,26 @@
 
     <ImageView
         android:id="@+id/MyRequests"
-        android:layout_width="46dp"
-        android:layout_height="47dp"
+        android:layout_width="36dp"
+        android:layout_height="37dp"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintHorizontal_bias="0.165"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/chat_button"
-        android:contentDescription="TODO" />
+        app:layout_constraintVertical_bias="0.989"
+        app:srcCompat="@drawable/chat_button" />
 
     <ImageView
         android:id="@+id/UserProfile"
-        android:layout_width="41dp"
-        android:layout_height="45dp"
+        android:layout_width="42dp"
+        android:layout_height="48dp"
         android:clickable="true"
         android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintHorizontal_bias="0.843"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
