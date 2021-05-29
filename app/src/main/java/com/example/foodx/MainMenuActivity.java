@@ -100,7 +100,7 @@ public class MainMenuActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainMenuActivity.this, RequestsActivity.class));
+                //startActivity(new Intent(MainMenuActivity.this, RequestsActivity.class));
             }
         });
 
