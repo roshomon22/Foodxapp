@@ -10,11 +10,12 @@
     <TextView
 
         android:id="@+id/chats"
-        android:layout_width="369dp"
-        android:layout_height="48dp"
+        android:layout_width="345dp"
+        android:layout_height="47dp"
         android:background="@color/black"
         android:padding="10dp"
         android:text="Chats"
+        android:fontFamily="@font/montserrat"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/Chats_recycler"
@@ -22,15 +23,15 @@
 
     <Button
         android:id="@+id/backBtnchview"
-        android:layout_width="39dp"
-        android:layout_height="46dp"
+        android:layout_width="32dp"
+        android:layout_height="33dp"
 
-        android:layout_marginBottom="2dp"
+
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="7dp"
         android:background="@drawable/abc_vector_test"
         app:layout_constraintBottom_toTopOf="@+id/Chats_recycler"
         app:layout_constraintEnd_toStartOf="@+id/chats"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="@+id/chats"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
