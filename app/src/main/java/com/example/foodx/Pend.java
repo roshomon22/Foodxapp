@@ -3,30 +3,29 @@ package com.example.foodx;
 
 public class Pend {
 
-    private String itemName;
+    private String Items;
 
 
     public Pend() {
 
     }
-    public Pend(String itemName)
+    public Pend(String items)
     {
-        this.itemName = itemName;
+        this.Items = items;
 
 
     }
 
-    public Pend(String foodItemName, String locationAreaString, String phoneNumberString, String userID, String expiryDate) {
-    }
+
 
     public String getItemName() {
-        return itemName;
+        return Items;
     }
 
 
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public void setItemName(String items) {
+        this.Items = items;
     }
 
 
