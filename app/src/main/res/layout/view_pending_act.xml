@@ -42,10 +42,23 @@
             android:textSize="11sp" />
         <TextView
             android:id="@+id/food_13"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userid2"
+            android:layout_marginLeft="90dp"
+            android:background="#F3F3F3"
+            android:fontFamily="@font/montserrat"
+
+            android:text=" "
+            android:textColor="#000"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/food_55"
             android:layout_width="83dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/userid2"
-            android:layout_marginLeft="110dp"
+            android:layout_marginLeft="140dp"
             android:background="#F3F3F3"
             android:fontFamily="@font/montserrat"
 

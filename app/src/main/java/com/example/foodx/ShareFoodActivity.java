@@ -37,6 +37,7 @@ public class ShareFoodActivity extends AppCompatActivity {
     private EditText FoodItemName;
     private EditText PhoneNumber;
     private EditText LocationArea;
+    private EditText Quantity;
     private Button PostButton;
     private String expiryDate;
     private FirebaseAuth mAuth;
@@ -98,7 +99,10 @@ public class ShareFoodActivity extends AppCompatActivity {
         FoodItemName = (EditText) findViewById(R.id.food_item_name);
         LocationArea = (EditText) findViewById(R.id.location_area);
         PhoneNumber = (EditText) findViewById(R.id.phone_no);
+
+        Quantity = (EditText) findViewById(R.id.quantity_1);
         PostButton = (Button) findViewById(R.id.post_btn);
+
 
         PostButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,6 +110,7 @@ public class ShareFoodActivity extends AppCompatActivity {
                 String FoodItemNameString = FoodItemName.getText().toString();
                 String LocationAreaString = LocationArea.getText().toString();
                 String PhoneNumberString = PhoneNumber.getText().toString();
+                String QuantityString=Quantity.getText().toString();
                 String UserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
 
@@ -123,6 +128,7 @@ public class ShareFoodActivity extends AppCompatActivity {
                             newPost.child("expiryDate").setValue(expiryDate);
                             newPost.child("itemName").setValue(FoodItemNameString);
                             newPost.child("location").setValue(LocationAreaString);
+                            newPost.child("quantity").setValue(QuantityString);
                             newPost.child("userID").setValue(UserID);
                             newPost.child("username").setValue(snapshot.child("fullName").getValue());
                             startActivity(new Intent(ShareFoodActivity.this, ShareActivity.class));

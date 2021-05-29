@@ -47,6 +47,7 @@ public class MyAdapter1 extends RecyclerView.Adapter<MyAdapter1.YuViewHolder>{
         Post post=pList1.get(position1);
         holder1.itemName.setText(post.getItemName());
         holder1.Location.setText(post.getLocation());
+        holder1.Quantity.setText(post.getQuantity());
 
 
 
@@ -61,7 +62,7 @@ public class MyAdapter1 extends RecyclerView.Adapter<MyAdapter1.YuViewHolder>{
 
     public class YuViewHolder extends RecyclerView.ViewHolder {
 
-        TextView itemName,Location;
+        TextView itemName,Location, Quantity;
 
 
 
@@ -69,7 +70,8 @@ public class MyAdapter1 extends RecyclerView.Adapter<MyAdapter1.YuViewHolder>{
             super(itemView);
 
             itemName = itemView.findViewById(R.id.userid1);
-            Location =itemView.findViewById(R.id.food_12);
+            Location =itemView.findViewById(R.id.food_77);
+            Quantity=itemView.findViewById(R.id.food_12);
 
 
         }

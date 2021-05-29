@@ -57,6 +57,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>{
                 intent.putExtra("Number",temp.getContactNumber());
                 intent.putExtra("Expiry",temp.getExpiryDate());
                 intent.putExtra("Username",temp.getUsername());
+                intent.putExtra("quantity",temp.getQuantity());
                 intent.putExtra("userid", temp.getUserID());
 
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

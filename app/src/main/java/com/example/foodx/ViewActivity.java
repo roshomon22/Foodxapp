@@ -46,11 +46,13 @@ public class ViewActivity extends AppCompatActivity {
         tv3 = (TextView) findViewById(R.id.textView4);
         tv4 = (TextView) findViewById(R.id.textView2);
         tv5 = (TextView) findViewById(R.id.textView5);
+        tv6=(TextView)findViewById(R.id.textView11);
         tv1.setText(getIntent().getStringExtra("itemName"));
         tv2.setText(getIntent().getStringExtra("Location"));
         tv3.setText(getIntent().getStringExtra("Number"));
         tv4.setText(getIntent().getStringExtra("Username"));
         tv5.setText(getIntent().getStringExtra("Expiry"));
+        tv6.setText(getIntent().getStringExtra("quantity"));
         String uid= getIntent().getStringExtra("userid");
         mPend = FirebaseDatabase.getInstance().getReference().child("Pending");
         mAuth = FirebaseAuth.getInstance();
@@ -59,6 +61,7 @@ public class ViewActivity extends AppCompatActivity {
         String ItemName = getIntent().getStringExtra("itemName");
         String location = getIntent().getStringExtra("Location");
         String UserName = getIntent().getStringExtra("Username");
+        String Quantity = getIntent().getStringExtra("quantity");
         chat=findViewById((R.id.b_ch));
         chat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,7 +94,7 @@ public class ViewActivity extends AppCompatActivity {
 
                     // Pending request sotrage
                     String curUserID = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                    Pend pend = new Pend(ItemName,location, UserName);
+                    Pend pend = new Pend(ItemName,location, UserName,Quantity);
                     FirebaseDatabase.getInstance().getReference("Pending").child(curUserID).push().setValue(pend);
 
                     //Incoming Storage

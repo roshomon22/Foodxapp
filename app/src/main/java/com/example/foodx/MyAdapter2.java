@@ -48,12 +48,8 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.YvViewHolder>{
         holder2.itemName.setText(Pend.getItem());
         holder2.Location.setText(Pend.getLocation());
         holder2.UserName.setText(Pend.getUserName());
-        holder2.View.setOnClickListener((view)->{
-            Intent intent =new Intent(context2, ViewActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context2.startActivity(intent);
+        holder2.Quantity.setText(Pend.getQuantity());
 
-        });
 
 
 
@@ -68,7 +64,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.YvViewHolder>{
 
     public class YvViewHolder extends RecyclerView.ViewHolder {
 
-        TextView itemName,Location, UserName, View;
+        TextView itemName,Location, UserName, Quantity;
 
 
 
@@ -76,9 +72,10 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.YvViewHolder>{
             super(itemView);
 
             itemName = itemView.findViewById(R.id.userid2);
-            Location =itemView.findViewById(R.id.food_13);
+            Location =itemView.findViewById(R.id.food_55);
             UserName = itemView.findViewById(R.id.user1);
-            View=itemView.findViewById(R.id.view);
+            Quantity = itemView.findViewById(R.id.food_13);
+
 
 
 

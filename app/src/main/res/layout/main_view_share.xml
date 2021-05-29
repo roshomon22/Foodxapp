@@ -30,7 +30,7 @@
 
         <TextView
             android:id="@+id/food_12"
-            android:layout_width="83dp"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/userid1"
             android:layout_marginLeft="11dp"
@@ -41,6 +41,19 @@
             android:textColor="#000"
             android:textSize="14sp" />
 
+
+        <TextView
+            android:id="@+id/food_77"
+            android:layout_width="83dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userid1"
+            android:layout_marginLeft="120dp"
+            android:background="#F3F3F3"
+            android:fontFamily="@font/montserrat"
+
+            android:text=" "
+            android:textColor="#000"
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/view123"

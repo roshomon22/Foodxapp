@@ -13,13 +13,16 @@ public class Post {
     private String Username;
 
 
+    private String Quantity;
+
+
     public Post() {
 
     }
-    public Post(String itemName,String location, String  contactNumber, String UserID, String expiryDate, String username)
+    public Post(String itemName,String location, String  contactNumber, String UserID, String expiryDate, String username,String quantity)
     {
         this.itemName = itemName;
-
+        this.Quantity=quantity;
         this.Location = location;
         this.contactNumber = contactNumber;
         this.UserID = UserID;
@@ -76,6 +79,13 @@ public class Post {
 
     public void setUsername(String username) {
         Username = username;
+    }
+    public String getQuantity() {
+        return Quantity;
+    }
+
+    public void setQuantity(String quantity) {
+        Quantity = quantity;
     }
 
 
