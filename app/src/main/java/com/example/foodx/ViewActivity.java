@@ -104,8 +104,6 @@ public class ViewActivity extends AppCompatActivity {
 
                             }
                         });
-
-
                     }
 
                     @Override
