@@ -79,9 +79,9 @@ public class ShareActivity extends AppCompatActivity {
                                 // Log.d("foodskipped:", "onDataChange: skipping item "+post.getUserID()+" "+UserID);
                                 list1.add(post);
                             }
-
+                            adapter1.notifyDataSetChanged();
                         }
-                        adapter1.notifyDataSetChanged();
+
                     }
 
 
