@@ -94,7 +94,8 @@ public class ChatView extends AppCompatActivity {
     private void readChats()
     {
         mUsers = new ArrayList<>();
-
+        useradapter = new UserAdapter(getApplicationContext(),mUsers);
+        recView.setAdapter(useradapter);
         reference = FirebaseDatabase.getInstance().getReference("Users");
 
         reference.addValueEventListener(new ValueEventListener() {
@@ -126,8 +127,8 @@ public class ChatView extends AppCompatActivity {
                         }
                     }
                 }
-                useradapter = new UserAdapter(getApplicationContext(),mUsers);
-                recView.setAdapter(useradapter);
+               useradapter.notifyDataSetChanged();
+
             }
 
             @Override

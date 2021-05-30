@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -48,6 +50,12 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.YrViewHolder>{
         Incoming Incoming =pList3.get(position3);
         holder3.Item.setText(Incoming.getItem());
         holder3.location.setText(Incoming.getLocation());
+        holder3.layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                holder3.view1235.setVisibility(View.VISIBLE);
+            }
+        });
        // holder3.ReqUserID.setText(Incoming.getReqUserID());
 
 
@@ -64,6 +72,8 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.YrViewHolder>{
     public class YrViewHolder extends RecyclerView.ViewHolder {
 
         TextView Item,location, ReqUserID;
+        RelativeLayout layout;
+        Button view1235;
 
 
 
@@ -72,6 +82,8 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.YrViewHolder>{
 
             Item= itemView.findViewById(R.id.userid3);
             location =itemView.findViewById(R.id.user2);
+            layout = itemView.findViewById(R.id.req_in_layout);
+            view1235 = itemView.findViewById(R.id.view1235);
             //ReqUserID = itemView.findViewById(R.id.userid3);
 
 

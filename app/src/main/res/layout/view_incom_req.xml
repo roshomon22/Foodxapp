@@ -12,7 +12,8 @@
         android:layout_width="390dp"
         android:layout_height="83dp"
         android:background="#F3F3F3"
-        android:padding="15dp">
+        android:padding="15dp"
+        android:id="@+id/req_in_layout">
 
 
         <TextView
@@ -49,7 +50,8 @@
             android:layout_marginLeft="240dp"
             android:background="@drawable/g_99999"
             android:foreground="@drawable/g_99999"
-            android:text="" />
+            android:text=""
+            android:visibility="invisible" />
 
 
     </RelativeLayout>
