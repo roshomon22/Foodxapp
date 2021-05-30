@@ -161,7 +161,7 @@ public class MainMenuActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                     user1 = dataSnapshot.getValue(User.class);
-//                    Log.d("THE CURRENT USER LOCATION:",user1.getLocation());
+                    Log.d("THE CURRENT USER LOCATION:",user1.getLocation());
 
 
 
@@ -179,16 +179,15 @@ public class MainMenuActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                    Post post = ds.getValue(Post.class);
-                   // Log.d("foodskipped:", "onDataChange: skipping item "+post.getUserID()+" "+UserID);
-//                     && post.getLocation().equals(user1.getLocation())
-                    if (!post.getUserID().equals(UserID)){
-                       // Log.d("foodskipped:", "onDataChange: skipping item "+post.getUserID()+" "+UserID);
-                        list.add(post);
-                    }
-                    adapter.notifyDataSetChanged();
-                }
+                        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                            Post post = ds.getValue(Post.class);
+                            Log.d("foodskipped:", "onDataChange: skipping item "+post.getUserID()+" "+UserID+" "+ user1.getLocation());
+                            if (!post.getUserID().equals(UserID) && post.getLocation().equals(user1.getLocation())){
+                                // Log.d("foodskipped:", "onDataChange: skipping item "+post.getUserID()+" "+UserID);
+                                list.add(post);
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
 
             }
 
