@@ -2,6 +2,7 @@ package com.example.foodx;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +32,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     @NonNull
     @NotNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mcontext).inflate(R.layout.chats_item,parent,false);
         return new UserAdapter.ViewHolder(view);
     }
@@ -40,6 +41,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         User user = muser.get(position);
+        Log.d(" GETTING THE USER FOR CHAT VIEW :", user.getId());
         holder.UserName.setText(user.getFullName());
         String uid = user.getId();
         holder.UserName.setOnClickListener((view)->{

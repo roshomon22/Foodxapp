@@ -22,6 +22,8 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import java.sql.Ref;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class MainMenuActivity extends AppCompatActivity {
     private RecyclerView recView;
@@ -37,8 +39,11 @@ public class MainMenuActivity extends AppCompatActivity {
     private Button UserSharedItems;
     private Button button2;
     private ImageView user;
-    private FirebaseAuth mAuth;
     private ImageView myrequest;
+    private FirebaseAuth mAuth;
+    private List<User> users;
+    private User user1;
+
 
 
     @Override
@@ -143,16 +148,38 @@ public class MainMenuActivity extends AppCompatActivity {
 //            }
 //        });
 
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        String uid = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
+        DatabaseReference userDetails = FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
+        Log.d(" GOT THE USER ",userDetails.toString()+" "+FirebaseDatabase.getInstance().getReference().child("Users").child(uid).toString());
+
+        userDetails.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                    user1 = dataSnapshot.getValue(User.class);
+                    Log.d("THE CURRENT USER LOCATION:",user1.getLocation());
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         postsRef.addValueEventListener(new ValueEventListener() {
 
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     Post post = ds.getValue(Post.class);
                    // Log.d("foodskipped:", "onDataChange: skipping item "+post.getUserID()+" "+UserID);
-                    if (!post.getUserID().equals(UserID)){
+                    if (!post.getUserID().equals(UserID) && post.getLocation().equals(user1.getLocation())){
                        // Log.d("foodskipped:", "onDataChange: skipping item "+post.getUserID()+" "+UserID);
                         list.add(post);
                     }

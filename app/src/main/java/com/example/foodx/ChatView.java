@@ -66,15 +66,19 @@ public class ChatView extends AppCompatActivity {
                 for (DataSnapshot snapshot1:snapshot.getChildren())
                 {
                     Chat chat= snapshot1.getValue(Chat.class);
-                    if (chat.getSender().equals(fuser.getUid()))
+                    if (chat.getSender().equals(fuser.getUid()) && !userList.contains(chat.getReceiver()) )
                     {
                         userList.add(chat.getReceiver());
                     }
-                    if (chat.getReceiver().equals(fuser.getUid()))
+                    if (chat.getReceiver().equals(fuser.getUid()) && !userList.contains(chat.getSender()))
                     {
                         userList.add(chat.getSender());
                     }
 
+                }
+                for( String i : userList)
+                {
+                    Log.d("THE USER LIST FOR CHAT VIEW :", "user :"+i);
                 }
                 readChats();
             }
@@ -103,16 +107,21 @@ public class ChatView extends AppCompatActivity {
                     User user =snapshot1.getValue(User.class);
                     for (String id :userList)
                     {
+                        Log.d("THE USER LIST FOR CHAT VIEW 3CURRENT ID:", "user :"+ id);
                         if(user.getId().equals(id)){
+                            Log.d("THE USER LIST FOR CHAT VIEW 22:", "user :"+ mUsers.toString());
                             if (mUsers.size()!=0){
                                 for (User user1:mUsers)
                                 {
+
                                     if(!user.getId().equals(user1.getId())){
                                         mUsers.add(user);
+                                        Log.d("THE USER LIST FOR CHAT VIEW IF CURRENT USER NOT ALREADY THERE IN MUSER ADD HIM", "user :"+ mUsers.toString());
                                     }
                                 }
                             } else {
                                 mUsers.add(user);
+                                Log.d("THE USER LIST FOR CHAT VIEW 3 mUSER WAS NULL SO ADDED USER :", "user :"+ mUsers.toString());
                             }
                         }
                     }
