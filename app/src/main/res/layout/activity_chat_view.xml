@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".ChatView"
     tools:ignore="MissingDefaultResource">
 
@@ -13,9 +14,9 @@
         android:layout_width="345dp"
         android:layout_height="47dp"
         android:background="@color/black"
+        android:fontFamily="@font/montserrat"
         android:padding="10dp"
         android:text="Chats"
-        android:fontFamily="@font/montserrat"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/Chats_recycler"
