@@ -12,33 +12,31 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
 
-public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
-    private Context mcontext;
-    private List<User> muser;
+public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UsViewHolder> {
+     Context mcontext;
+     List<User> muser;
 
-    public UserAdapter (Context context, List<User> muser)
+    public UserAdapter (Context mcontext, List<User> muser)
     {
-        this.mcontext=context;
+        this.mcontext=mcontext;
         this.muser=muser;
     }
 
 
 
     @NonNull
-    @NotNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public UsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mcontext).inflate(R.layout.chats_item,parent,false);
-        return new UserAdapter.ViewHolder(view);
+        return new UsViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull UsViewHolder holder, int position) {
 
         User user = muser.get(position);
         Log.d(" GETTING THE USER FOR CHAT VIEW :", user.getId());
@@ -59,12 +57,12 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         return muser.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class UsViewHolder extends RecyclerView.ViewHolder {
 
         public TextView UserName;
 
 
-        public ViewHolder(@NonNull View itemView) {
+        public UsViewHolder(@NonNull View itemView) {
             super(itemView);
 
             UserName = itemView.findViewById(R.id.chats_username);

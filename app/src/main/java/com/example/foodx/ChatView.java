@@ -32,7 +32,7 @@ public class ChatView extends AppCompatActivity {
     private List<User> mUsers;
 
     FirebaseUser fuser;
-    DatabaseReference reference;
+    DatabaseReference reference,reference1;
 
     private  List<String> userList;
 
@@ -41,26 +41,21 @@ public class ChatView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_view);
-        backbtn = findViewById(R.id.backBtnchview);
-        backbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ChatView.this,MainMenuActivity.class));
-            }
-        });
-
         recView = findViewById(R.id.Chats_recycler);
         recView.setHasFixedSize(true);
-        recView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recView.setLayoutManager(new LinearLayoutManager(this));
+        mUsers = new ArrayList<User>();
+        useradapter = new UserAdapter(this,mUsers);
+        recView.setAdapter(useradapter);
 
         fuser = FirebaseAuth.getInstance().getCurrentUser();
 
-        userList = new ArrayList<>();
+        userList = new ArrayList<String>();
 
         reference = FirebaseDatabase.getInstance().getReference("Chats");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
                 userList.clear();
 
                 for (DataSnapshot snapshot1:snapshot.getChildren())
@@ -76,31 +71,25 @@ public class ChatView extends AppCompatActivity {
                     }
 
                 }
-                for( String i : userList)
-                {
-                    Log.d("THE USER LIST FOR CHAT VIEW :", "user :"+i);
-                }
-                readChats();
+
+//                for( String i : userList)
+//                {
+//                    Log.d("THE USER LIST FOR CHAT VIEW :", "user :"+i);
+//                    readChats(mUsers,useradapter);
+//                }
+
             }
 
             @Override
-            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
 
-    }
-
-    private void readChats()
-    {
-        mUsers = new ArrayList<>();
-        useradapter = new UserAdapter(getApplicationContext(),mUsers);
-        recView.setAdapter(useradapter);
-        reference = FirebaseDatabase.getInstance().getReference("Users");
-
-        reference.addValueEventListener(new ValueEventListener() {
+        reference1 = FirebaseDatabase.getInstance().getReference("Users");
+        reference1.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
                 mUsers.clear();
 
                 for (DataSnapshot snapshot1:snapshot.getChildren())
@@ -111,30 +100,46 @@ public class ChatView extends AppCompatActivity {
                         Log.d("THE USER LIST FOR CHAT VIEW 3CURRENT ID:", "user :"+ id);
                         if(user.getId().equals(id)){
                             Log.d("THE USER LIST FOR CHAT VIEW 22:", "user :"+ mUsers.toString());
-                            if (mUsers.size()!=0){
-                                for (User user1:mUsers)
-                                {
-
-                                    if(!user.getId().equals(user1.getId())){
-                                        mUsers.add(user);
-                                        Log.d("THE USER LIST FOR CHAT VIEW IF CURRENT USER NOT ALREADY THERE IN MUSER ADD HIM", "user :"+ mUsers.toString());
-                                    }
-                                }
-                            } else {
-                                mUsers.add(user);
-                                Log.d("THE USER LIST FOR CHAT VIEW 3 mUSER WAS NULL SO ADDED USER :", "user :"+ mUsers.toString());
-                            }
+//                            if (mUsers.size()!=0){
+//                                for (User user1:mUsers)
+//                                {
+//
+//                                    if(!user.getId().equals(user1.getId())){
+//                                        mUsers.add(user);
+//                                        Log.d("THE USER LIST FOR CHAT VIEW IF CURRENT USER NOT ALREADY THERE IN MUSER ADD HIM", "user :"+ mUsers.toString());
+//                                    }
+//                                }
+//                            } else {
+//                                mUsers.add(user);
+//                                Log.d("THE USER LIST FOR CHAT VIEW 3 mUSER WAS NULL SO ADDED USER :", "user :"+ mUsers.toString());
+//                            }
+                            mUsers.add(user);
                         }
                     }
                 }
-               useradapter.notifyDataSetChanged();
+                useradapter.notifyDataSetChanged();
 
             }
 
             @Override
             public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
+                System.out.println("The read failed: " + error.getCode());
             }
         });
+
+        backbtn = findViewById(R.id.backBtnchview);
+        backbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ChatView.this,MainMenuActivity.class));
+            }
+        });
+
     }
+
+//    private void readChats(List<User> mUsers, UserAdapter useradapter)
+//    {
+//
+//        return null;
+//    }
 }

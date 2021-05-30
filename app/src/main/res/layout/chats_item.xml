@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:padding="10dp"
-    android:layout_height="match_parent">
+    android:layout_height="80dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="0dp"
+    android:elevation="0dp"
+    android:background="#F3F3F3"
+    app:cardUseCompatPadding="true">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:layout_margin="10dp">
+        android:layout_width="390dp"
+        android:layout_height="80dp"
+        android:background="#F3F3F3"
+        android:padding="10dp">
 
-    <TextView
-        android:id="@+id/chats_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Username"
-        android:textColor="@color/black"
-        android:textSize="20dp" />
+        <TextView
+            android:id="@+id/chats_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Username"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:layout_centerVertical="true"/>
 
     </RelativeLayout>
 
