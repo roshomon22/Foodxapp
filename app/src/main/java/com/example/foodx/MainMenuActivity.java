@@ -163,21 +163,11 @@ public class MainMenuActivity extends AppCompatActivity {
                     user1 = dataSnapshot.getValue(User.class);
                     Log.d("THE CURRENT USER LOCATION:",user1.getLocation());
 
+                postsRef.addValueEventListener(new ValueEventListener() {
 
 
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-        postsRef.addValueEventListener(new ValueEventListener() {
-
-
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
 
                         for (DataSnapshot ds : dataSnapshot.getChildren()) {
                             Post post = ds.getValue(Post.class);
@@ -189,15 +179,27 @@ public class MainMenuActivity extends AppCompatActivity {
                             adapter.notifyDataSetChanged();
                         }
 
+                    }
+
+
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        System.out.println("The read failed: " + databaseError.getCode());
+                    }
+                });
+
+
+
             }
-
-
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
-                System.out.println("The read failed: " + databaseError.getCode());
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
+
+
 
 
 
