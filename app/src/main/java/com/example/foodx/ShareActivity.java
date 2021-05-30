@@ -17,7 +17,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class ShareActivity extends AppCompatActivity {
     private Button backbtn5;
@@ -25,56 +28,35 @@ public class ShareActivity extends AppCompatActivity {
     private MyAdapter1 adapter1;
     private ArrayList<Post> list1;
     private FirebaseDatabase mDatabase= FirebaseDatabase.getInstance();
-    private DatabaseReference RootRef = mDatabase.getInstance().getReference();
-    private DatabaseReference usersRef=RootRef.child("Users");
-    private DatabaseReference postsRef=RootRef.child("Posts");
-    private FirebaseAuth mAuth;
+    private final DatabaseReference RootRef = mDatabase.getInstance().getReference();
+    private final DatabaseReference usersRef=RootRef.child("Users");
+    private final DatabaseReference postsRef=RootRef.child("Posts");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_share);
-        recView1 = (RecyclerView) findViewById(R.id.recView1);
+        recView1 = findViewById(R.id.recView1);
         recView1.setHasFixedSize(true);
         recView1.setLayoutManager(new LinearLayoutManager(this));
-        list1 =new ArrayList<Post>();
+        list1 = new ArrayList<>();
         adapter1 = new MyAdapter1(this,list1);
         recView1.setAdapter(adapter1);
-        mAuth = FirebaseAuth.getInstance();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
-        backbtn5= (Button) findViewById(R.id.backBtn5);
-        backbtn5.setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            startActivity(new Intent(ShareActivity.this, MainMenuActivity.class));
-                                        }
-                                    });
+        backbtn5= findViewById(R.id.backBtn5);
+        backbtn5.setOnClickListener(view -> startActivity(new Intent(ShareActivity.this, MainMenuActivity.class)));
 
-                String UserID =FirebaseAuth.getInstance().getCurrentUser().getUid();
-                //String userLoc = FirebaseAuth.getInstance().getCurrentUser().;
-//        FirebaseDatabase.getInstance().getReference("Users/" + UserID).addValueEventListener(new ValueEventListener() {
-//
-//
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                   User user = dataSnapshot.getValue(User.class);
-//                    System.out.println(user.location);
-//
-//
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//                System.out.println("The read failed: " + databaseError.getCode());
-//            }
-//        });
-
+                String UserID = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
 
                 postsRef.addValueEventListener(new ValueEventListener() {
 
 
                     @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
+                    public void onDataChange(@NotNull DataSnapshot dataSnapshot) {
                         for (DataSnapshot ds : dataSnapshot.getChildren()) {
                             Post post = ds.getValue(Post.class);
+                            assert post != null;
                             if (post.getUserID().equals(UserID )){
                                 // Log.d("foodskipped:", "onDataChange: skipping item "+post.getUserID()+" "+UserID);
                                 list1.add(post);
@@ -87,7 +69,7 @@ public class ShareActivity extends AppCompatActivity {
 
 
                     @Override
-                    public void onCancelled(DatabaseError databaseError) {
+                    public void onCancelled(@NotNull DatabaseError databaseError) {
                         System.out.println("The read failed: " + databaseError.getCode());
                     }
                 });

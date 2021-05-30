@@ -21,6 +21,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import org.jetbrains.annotations.NotNull;
+
 import java.sql.Ref;
 import java.util.ArrayList;
 import java.util.List;
@@ -80,76 +83,37 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
-        PendingRqstBtn = (Button) findViewById(R.id.PendRqstBtn);
-        PendingRqstBtn.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainMenuActivity.this, PendingActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        PendingRqstBtn = findViewById(R.id.PendRqstBtn);
+        PendingRqstBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(MainMenuActivity.this, PendingActivity.class);
+            startActivity(intent);
+            finish();
         });
-        button2 = (Button) findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainMenuActivity.this, RequestsActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        button2 = findViewById(R.id.button2);
+        button2.setOnClickListener(view -> {
+            Intent intent = new Intent(MainMenuActivity.this, RequestsActivity.class);
+            startActivity(intent);
+            finish();
         });
 
-        ShareFoodBtn = (Button) findViewById(R.id.ShrFoodBtn);
-        ShareFoodBtn.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainMenuActivity.this, ShareFoodActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        ShareFoodBtn = findViewById(R.id.ShrFoodBtn);
+        ShareFoodBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(MainMenuActivity.this, ShareFoodActivity.class);
+            startActivity(intent);
+            finish();
         });
 
 
-        UserSharedItems = (Button) findViewById(R.id.button);
-        UserSharedItems.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainMenuActivity.this, ShareActivity.class));
-            }
-        });
+        UserSharedItems = findViewById(R.id.button);
+        UserSharedItems.setOnClickListener(view -> startActivity(new Intent(MainMenuActivity.this, ShareActivity.class)));
 
-        user = (ImageView) findViewById(R.id.UserProfile);
-        user.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainMenuActivity.this, ProfileUser.class));
-            }
-        });
+        user = findViewById(R.id.UserProfile);
+        user.setOnClickListener(view -> startActivity(new Intent(MainMenuActivity.this, ProfileUser.class)));
 
 
 
-        String UserID =FirebaseAuth.getInstance().getCurrentUser().getUid();
+        String UserID = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
 
-
-        //String userLoc = CurrentUser.location;
-//        FirebaseDatabase.getInstance().getReference("Users/" + UserID).addValueEventListener(new ValueEventListener() {
-//
-//
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                   User user = dataSnapshot.getValue(User.class);
-//                    System.out.println(user.location);
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//                System.out.println("The read failed: " + databaseError.getCode());
-//            }
-//        });
 
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         String uid = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
@@ -161,16 +125,18 @@ public class MainMenuActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                     user1 = dataSnapshot.getValue(User.class);
-                    Log.d("THE CURRENT USER LOCATION:",user1.getLocation());
+                assert user1 != null;
+                Log.d("THE CURRENT USER LOCATION:",user1.getLocation());
 
                 postsRef.addValueEventListener(new ValueEventListener() {
 
 
                     @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
+                    public void onDataChange(@NotNull DataSnapshot dataSnapshot) {
 
                         for (DataSnapshot ds : dataSnapshot.getChildren()) {
                             Post post = ds.getValue(Post.class);
+                            assert post != null;
                             Log.d("foodskipped:", "onDataChange: skipping item "+post.getUserID()+" "+UserID+" "+ user1.getLocation());
                             if (!post.getUserID().equals(UserID) && post.getLocation().equals(user1.getLocation())){
                                 // Log.d("foodskipped:", "onDataChange: skipping item "+post.getUserID()+" "+UserID);
@@ -184,7 +150,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
 
                     @Override
-                    public void onCancelled(DatabaseError databaseError) {
+                    public void onCancelled(@NotNull DatabaseError databaseError) {
                         System.out.println("The read failed: " + databaseError.getCode());
                     }
                 });
