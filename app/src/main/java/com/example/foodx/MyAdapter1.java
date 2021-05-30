@@ -50,13 +50,7 @@ public class MyAdapter1 extends RecyclerView.Adapter<MyAdapter1.YuViewHolder>{
         holder1.Quantity.setText(post.getQuantity());
 
 
-        holder1.View2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-
-            }
-        });
 
 
 
@@ -72,7 +66,7 @@ public class MyAdapter1 extends RecyclerView.Adapter<MyAdapter1.YuViewHolder>{
     public class YuViewHolder extends RecyclerView.ViewHolder {
 
         TextView itemName,Location, Quantity;
-        Button View2;
+
 
 
 
@@ -82,7 +76,7 @@ public class MyAdapter1 extends RecyclerView.Adapter<MyAdapter1.YuViewHolder>{
             itemName = itemView.findViewById(R.id.userid1);
             Location =itemView.findViewById(R.id.food_77);
             Quantity=itemView.findViewById(R.id.food_12);
-            View2 =itemView.findViewById(R.id.view123);
+
 
         }
 

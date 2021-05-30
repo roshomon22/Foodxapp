@@ -43,12 +43,12 @@
 
         <Button
             android:id="@+id/view1235"
-            android:layout_width="44dp"
-            android:layout_height="39dp"
+            android:layout_width="45dp"
+            android:layout_height="41dp"
             android:layout_alignLeft="@id/userid3"
             android:layout_marginLeft="240dp"
-            android:background="@drawable/g_777"
-            android:foreground="@drawable/g_777"
+            android:background="@drawable/g_99999"
+            android:foreground="@drawable/g_99999"
             android:text="" />
 
 
